@@ -1,0 +1,393 @@
+﻿<#@ template language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ output extension=".cs" #>
+using System;
+using System.Collections.ObjectModel;
+using System.Data;
+namespace CHControl.<#= ClassName #>Manage
+{
+    public class <#= ClassName #> : NotificationObject
+	{
+	       #region Attribute
+	       <#
+		       foreach(var item in ColumnList)
+			   {
+			       if(item.DataType=="nvarchar" || 
+				       item.DataType=="varchar" || 
+					   item.DataType=="text" || 
+					   item.DataType=="uniqueidentifier" ||
+					   item.DataType=="char"
+					   )
+				   {
+				        #> 
+						private string m_<#= item.Name#>;
+						public string <#= item.Name#>
+						{
+							get { return m_<#= item.Name#>; }
+							set
+							{
+								if (value != m_<#= item.Name#>)
+								{
+									m_<#= item.Name#> = value;
+									OnPropertyChanged("<#= item.Name#>");
+								}
+							}
+						}
+						<#
+				   }
+				   if(item.DataType=="date" || 
+				       item.DataType=="time" || 
+					   item.DataType=="datetime2" ||
+					   item.DataType=="datetime"
+					   )
+			       {
+				      if(item.Nullable=="yes")
+					  {
+					      #> 
+							private Nullable<System.DateTime> m_<#= item.Name#>;
+							public Nullable<System.DateTime> <#= item.Name#>
+							{
+								get { return m_<#= item.Name#>; }
+								set
+								{
+									if (value != m_<#= item.Name#>)
+									{
+										m_<#= item.Name#> = value;
+										OnPropertyChanged("<#= item.Name#>");
+									}
+								 }
+							  }
+							<#
+					  }
+					  else
+					  {
+					        #> 
+							private DateTime m_<#= item.Name#>;
+							public DateTime <#= item.Name#>
+							{
+								get { return m_<#= item.Name#>; }
+								set
+								{
+									if (value != m_<#= item.Name#>)
+									{
+										m_<#= item.Name#> = value;
+										OnPropertyChanged("<#= item.Name#>");
+									}
+									}
+								}
+							<#
+					  }
+				      
+				   }
+
+				   if(item.DataType=="int")
+			       {
+				     if(item.Nullable=="yes")
+					  {
+					      #> 
+							private Nullable<int> m_<#= item.Name#>;
+							public Nullable<int> <#= item.Name#>
+							{
+								get { return m_<#= item.Name#>; }
+								set
+								{
+									if (value != m_<#= item.Name#>)
+									{
+										m_<#= item.Name#> = value;
+										OnPropertyChanged("<#= item.Name#>");
+									}
+								 }
+							  }
+							<#
+					  }
+					  else
+					  {
+					        #> 
+							private int m_<#= item.Name#>;
+							public int <#= item.Name#>
+							{
+								get { return m_<#= item.Name#>; }
+								set
+								{
+									if (value != m_<#= item.Name#>)
+									{
+										m_<#= item.Name#> = value;
+										OnPropertyChanged("<#= item.Name#>");
+									}
+									}
+								}
+							<#
+					  }
+				   }
+
+				   if(item.DataType=="bit")
+			       {
+				      if(item.Nullable=="yes")
+					  {
+					      #> 
+							private Nullable<bool> m_<#= item.Name#>;
+							public Nullable<bool> <#= item.Name#>
+							{
+								get { return m_<#= item.Name#>; }
+								set
+								{
+									if (value != m_<#= item.Name#>)
+									{
+										m_<#= item.Name#> = value;
+										OnPropertyChanged("<#= item.Name#>");
+									}
+								 }
+							  }
+							<#
+					  }
+					  else
+					  {
+					        #> 
+							private bool m_<#= item.Name#>;
+							public bool <#= item.Name#>
+							{
+								get { return m_<#= item.Name#>; }
+								set
+								{
+									if (value != m_<#= item.Name#>)
+									{
+										m_<#= item.Name#> = value;
+										OnPropertyChanged("<#= item.Name#>");
+									}
+									}
+								}
+							<#
+					  }
+				   }
+
+				    if(item.DataType=="decimal" 
+					|| item.DataType=="numeric"
+					)
+			       {
+				      if(item.Nullable=="yes")
+					  {
+					      #> 
+							private Nullable<decimal> m_<#= item.Name#>;
+							public Nullable<decimal> <#= item.Name#>
+							{
+								get { return m_<#= item.Name#>; }
+								set
+								{
+									if (value != m_<#= item.Name#>)
+									{
+										m_<#= item.Name#> = value;
+										OnPropertyChanged("<#= item.Name#>");
+									}
+								 }
+							  }
+							<#
+					  }
+					  else
+					  {
+					        #> 
+							private decimal m_<#= item.Name#>;
+							public decimal <#= item.Name#>
+							{
+								get { return m_<#= item.Name#>; }
+								set
+								{
+									if (value != m_<#= item.Name#>)
+									{
+										m_<#= item.Name#> = value;
+										OnPropertyChanged("<#= item.Name#>");
+									}
+									}
+								}
+							<#
+					  }
+				   }
+
+			   }
+		   #>
+		   #endregion
+
+		   #region Method
+        /// <summary>
+        /// 新增
+        /// </summary>
+        /// <returns></returns>
+        public bool InsertEntity()
+        {
+		    string sql=$@"INSERT INTO <#= DataName#>(<#
+			    int num=ColumnList.Count;
+				int i=0;
+				foreach(var item in ColumnList)
+				{
+			        i++;
+					if(i==num)
+					{
+					   #>
+					   <#= item.Name#>
+					   <#
+					}
+					else
+					{
+					    #>
+					   <#= item.Name+"," #>
+					   <#
+					}
+				}
+			#>) VALUES (<#
+			    int j=0;
+			    foreach(var item in ColumnList)
+				{
+			        j++;
+					if(j==num)
+					{
+					   #>
+					   '{<#= item.Name#>}'
+					   <#
+					}
+					else
+					{
+					    #>
+					   '{<#= item.Name#>}',
+					   <#
+					}
+				}
+			#>)";
+			int result = DB.ExecuteNonQuery(sql);
+            return (result>0);
+        }
+
+        /// <summary>
+        /// 更新
+        /// </summary>
+        /// <returns></returns>
+        public bool UpdateEntity()
+        {
+		    string sql=$@"UPDATE [dbo].[<#= DataName#>]
+					SET 
+				 <#
+				       int s=0;
+					   foreach(var item in ColumnList)
+					   {
+					      s++;
+					      if(!item.IsPK)
+						  {
+						     if(s==num)
+							  {
+								 #>
+								  <#= item.Name#>='{<#= item.Name#>}'
+								 <#
+							  }
+							  else
+							  {
+								   #>
+								   <#= item.Name#>='{<#= item.Name#>}',
+								  <#
+							  }
+						  }
+					}
+				  #>
+				  WHERE 
+				   <#
+				      var pklist = ColumnList.Where(p => p.IsPK).ToList();
+					  int count = pklist.Count;
+					  int k = 0;
+					  foreach (var pk in pklist)
+					  {
+						   k++;
+						   if (k == count)
+							{
+							    #>
+								  <#= pk.Name#>='{<#= pk.Name#>}'
+								<#
+							}
+							else
+							{
+							    #>
+								  <#= pk.Name#>='{<#= pk.Name#>}',
+								<#
+							}
+					    }
+				   #>
+				";
+			 int result = DB.ExecuteNonQuery(sql);
+             return (result>0);
+        }
+
+        /// <summary>
+        /// 删除
+        /// </summary>
+        /// <returns></returns>
+        public bool DeleteEntity()
+        {
+            return true;
+        }
+
+        /// <summary>
+        /// 查询
+        /// </summary>
+        /// <param name="sql"></param>
+        /// <returns></returns>
+        public ObservableCollection<<#= ClassName #>> SelectEntity(string sql)
+        {
+		     ObservableCollection<<#= ClassName #>> entityList=new ObservableCollection<<#= ClassName #>>();
+		     DataTable dt=DB.ExecuteSelect(sql).Tables[0]; 
+			 for(int i=0;i<dt.Rows.Count;i++)
+			 {
+			     <#= ClassName #> entityModel=new <#= ClassName #>();
+				 <#
+				  foreach(var item in ColumnList)
+				  {
+			            if(item.DataType=="nvarchar" || 
+							item.DataType=="varchar" || 
+							item.DataType=="text" || 
+							item.DataType=="uniqueidentifier" ||
+							item.DataType=="char"
+							)
+						{
+						    #>
+						    entityModel.<#= item.Name#>=dt.Rows[i]["<#= item.Name#>"]==DBNull.Value?"":dt.Rows[i]["<#= item.Name#>"].ToString();
+							<#
+						}
+						if(item.DataType=="date" || 
+							item.DataType=="time" || 
+							item.DataType=="datetime2" ||
+							item.DataType=="datetime"
+							)
+						{
+						    #>
+						    entityModel.<#= item.Name#>=dt.Rows[i]["<#= item.Name#>"]==DBNull.Value?(DateTime?)null:Convert.ToDateTime(dt.Rows[i]["<#= item.Name#>"]);
+							<#
+						}
+						if(item.DataType=="int")
+			            {
+						     #>
+						    entityModel.<#= item.Name#>=dt.Rows[i]["<#= item.Name#>"]==DBNull.Value?(int?)null:Convert.ToInt32(dt.Rows[i]["<#= item.Name#>"]);
+							<#
+						}
+						 if(item.DataType=="bit")
+						 {
+						      #>
+						    entityModel.<#= item.Name#>=dt.Rows[i]["<#= item.Name#>"]==DBNull.Value?(bool?)null:Convert.ToBoolean(dt.Rows[i]["<#= item.Name#>"]);
+							<#
+						 }
+						 if(item.DataType=="decimal" 
+							|| item.DataType=="numeric"
+							)
+						 {
+						     #>
+						    entityModel.<#= item.Name#>=dt.Rows[i]["<#= item.Name#>"]==DBNull.Value?(decimal?)null:Convert.ToDecimal(dt.Rows[i]["<#= item.Name#>"]);
+							<#
+						 }
+				  }
+				 #>
+				 entityList.Add(entityModel);
+			 } 
+            return entityList;
+        }
+        #endregion
+
+
+	}
+}
