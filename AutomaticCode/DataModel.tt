@@ -8,6 +8,7 @@ using System;
 using System.Collections.ObjectModel;
 using System.Data;
 using System.Text;
+using System.Data.SqlClient;
 namespace CHControl.<#= ClassName #>Manage
 {
     public class <#= ClassName #> : NotificationObject
@@ -461,6 +462,8 @@ namespace CHControl.<#= ClassName #>Manage
         /// <returns></returns>
         public bool DeleteEntity()
         {
+		         
+		    
             return true;
         }
 
@@ -469,7 +472,7 @@ namespace CHControl.<#= ClassName #>Manage
         /// </summary>
         /// <param name="sql"></param>
         /// <returns></returns>
-        public ObservableCollection<<#= ClassName #>> SelectEntity(string sql)
+        public ObservableCollection<<#= ClassName #>> SelectEntitys(string sql)
         {
 		     ObservableCollection<<#= ClassName #>> entityList=new ObservableCollection<<#= ClassName #>>();
 		     DataTable dt=DB.ExecuteSelect(sql).Tables[0]; 
@@ -530,6 +533,72 @@ namespace CHControl.<#= ClassName #>Manage
 				 entityList.Add(entityModel);
 			 } 
             return entityList;
+        }
+
+		/// <summary>
+        /// 查询
+        /// </summary>
+        /// <param name="sql"></param>
+        /// <returns></returns>
+        public <#= ClassName #> SelectEntity(string sql)
+        {
+		    <#= ClassName #> entityModel = new <#= ClassName #>();
+            SqlDataReader dataRead=DB.ExecuteReader(sql);
+            if (dataRead.Read())
+            {
+			     <#
+				  foreach(var item in ColumnList)
+				  {
+			            if(item.DataType=="nvarchar" || 
+							item.DataType=="varchar" || 
+							item.DataType=="text" || 
+							item.DataType=="char"
+							)
+						{
+						    #>
+						    entityModel.<#= item.Name#>=dataRead["<#= item.Name#>"]==DBNull.Value?"":dataRead["<#= item.Name#>"].ToString();
+							<#
+						}
+						if(item.DataType=="date" || 
+							item.DataType=="time" || 
+							item.DataType=="datetime2" ||
+							item.DataType=="datetime"
+							)
+						{
+						    #>
+						    entityModel.<#= item.Name#>=dataRead["<#= item.Name#>"]==DBNull.Value?(DateTime?)null:Convert.ToDateTime(dataRead["<#= item.Name#>"]);
+							<#
+						}
+						if(item.DataType=="int")
+			            {
+						     #>
+						    entityModel.<#= item.Name#>=dataRead["<#= item.Name#>"]==DBNull.Value?(int?)null:Convert.ToInt32(dataRead["<#= item.Name#>"]);
+							<#
+						}
+						 if(item.DataType=="bit")
+						 {
+						      #>
+						    entityModel.<#= item.Name#>=dataRead["<#= item.Name#>"]==DBNull.Value?(bool?)null:Convert.ToBoolean(dataRead["<#= item.Name#>"]);
+							<#
+						 }
+						 if(item.DataType=="decimal" 
+							|| item.DataType=="numeric"
+							)
+						 {
+						     #>
+						    entityModel.<#= item.Name#>=dataRead["<#= item.Name#>"]==DBNull.Value?(decimal?)null:Convert.ToDecimal(dataRead["<#= item.Name#>"]);
+							<#
+						 }
+						 if(item.DataType=="uniqueidentifier")
+						{
+						    #>
+						    entityModel.<#= item.Name#>=dataRead["<#= item.Name#>"]==DBNull.Value?(Guid?)null:Guid.Parse(dataRead["<#= item.Name#>"].ToString());
+							<#
+						}
+				  }
+				 #>
+			}
+			return entityModel;
         }
         #endregion
 
