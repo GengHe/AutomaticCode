@@ -18,7 +18,7 @@ namespace AutomaticCode
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "C:\Users\hegen\Desktop\AutomaticCode\AutomaticCode\DataModel.tt"
+    #line 1 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "14.0.0.0")]
     public partial class DataModel : DataModelBase
     {
@@ -28,31 +28,30 @@ namespace AutomaticCode
         /// </summary>
         public virtual string TransformText()
         {
-            this.Write("using System;\r\nusing System.Collections.ObjectModel;\r\nusing System.Data;\r\nnamespa" +
-                    "ce CHControl.");
+            this.Write("using System;\r\nusing System.Collections.ObjectModel;\r\nusing System.Data;\r\nusing S" +
+                    "ystem.Text;\r\nnamespace CHControl.");
             
-            #line 10 "C:\Users\hegen\Desktop\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 11 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(ClassName));
             
             #line default
             #line hidden
             this.Write("Manage\r\n{\r\n    public class ");
             
-            #line 12 "C:\Users\hegen\Desktop\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 13 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(ClassName));
             
             #line default
             #line hidden
             this.Write(" : NotificationObject\r\n\t{\r\n\t       #region Attribute\r\n\t       ");
             
-            #line 15 "C:\Users\hegen\Desktop\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 16 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
 
 		       foreach(var item in ColumnList)
 			   {
 			       if(item.DataType=="nvarchar" || 
 				       item.DataType=="varchar" || 
 					   item.DataType=="text" || 
-					   item.DataType=="uniqueidentifier" ||
 					   item.DataType=="char"
 					   )
 				   {
@@ -62,49 +61,49 @@ namespace AutomaticCode
             #line hidden
             this.Write(" \r\n\t\t\t\t\t\tprivate string m_");
             
-            #line 26 "C:\Users\hegen\Desktop\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 26 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
             
             #line default
             #line hidden
             this.Write(";\r\n\t\t\t\t\t\tpublic string ");
             
-            #line 27 "C:\Users\hegen\Desktop\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 27 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
             
             #line default
             #line hidden
             this.Write("\r\n\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\tget { return m_");
             
-            #line 29 "C:\Users\hegen\Desktop\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 29 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
             
             #line default
             #line hidden
             this.Write("; }\r\n\t\t\t\t\t\t\tset\r\n\t\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\t\tif (value != m_");
             
-            #line 32 "C:\Users\hegen\Desktop\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 32 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
             
             #line default
             #line hidden
             this.Write(")\r\n\t\t\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\t\t\tm_");
             
-            #line 34 "C:\Users\hegen\Desktop\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 34 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
             
             #line default
             #line hidden
             this.Write(" = value;\r\n\t\t\t\t\t\t\t\t\tOnPropertyChanged(\"");
             
-            #line 35 "C:\Users\hegen\Desktop\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 35 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
             
             #line default
             #line hidden
             this.Write("\");\r\n\t\t\t\t\t\t\t\t}\r\n\t\t\t\t\t\t\t}\r\n\t\t\t\t\t\t}\r\n\t\t\t\t\t\t");
             
-            #line 39 "C:\Users\hegen\Desktop\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 39 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
 
 				   }
 				   if(item.DataType=="date" || 
@@ -119,51 +118,51 @@ namespace AutomaticCode
             
             #line default
             #line hidden
-            this.Write(" \r\n\t\t\t\t\t\t\tprivate Nullable<System.DateTime> m_");
+            this.Write(" \r\n\t\t\t\t\t\t\tprivate DateTime? m_");
             
-            #line 50 "C:\Users\hegen\Desktop\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 50 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
             
             #line default
             #line hidden
-            this.Write(";\r\n\t\t\t\t\t\t\tpublic Nullable<System.DateTime> ");
+            this.Write(";\r\n\t\t\t\t\t\t\tpublic DateTime? ");
             
-            #line 51 "C:\Users\hegen\Desktop\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 51 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
             
             #line default
             #line hidden
             this.Write("\r\n\t\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\t\tget { return m_");
             
-            #line 53 "C:\Users\hegen\Desktop\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 53 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
             
             #line default
             #line hidden
             this.Write("; }\r\n\t\t\t\t\t\t\t\tset\r\n\t\t\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\t\t\tif (value != m_");
             
-            #line 56 "C:\Users\hegen\Desktop\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 56 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
             
             #line default
             #line hidden
             this.Write(")\r\n\t\t\t\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\t\t\t\tm_");
             
-            #line 58 "C:\Users\hegen\Desktop\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 58 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
             
             #line default
             #line hidden
             this.Write(" = value;\r\n\t\t\t\t\t\t\t\t\t\tOnPropertyChanged(\"");
             
-            #line 59 "C:\Users\hegen\Desktop\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 59 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
             
             #line default
             #line hidden
             this.Write("\");\r\n\t\t\t\t\t\t\t\t\t}\r\n\t\t\t\t\t\t\t\t }\r\n\t\t\t\t\t\t\t  }\r\n\t\t\t\t\t\t\t");
             
-            #line 63 "C:\Users\hegen\Desktop\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 63 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
 
 					  }
 					  else
@@ -174,49 +173,49 @@ namespace AutomaticCode
             #line hidden
             this.Write(" \r\n\t\t\t\t\t\t\tprivate DateTime m_");
             
-            #line 68 "C:\Users\hegen\Desktop\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 68 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
             
             #line default
             #line hidden
             this.Write(";\r\n\t\t\t\t\t\t\tpublic DateTime ");
             
-            #line 69 "C:\Users\hegen\Desktop\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 69 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
             
             #line default
             #line hidden
             this.Write("\r\n\t\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\t\tget { return m_");
             
-            #line 71 "C:\Users\hegen\Desktop\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 71 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
             
             #line default
             #line hidden
             this.Write("; }\r\n\t\t\t\t\t\t\t\tset\r\n\t\t\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\t\t\tif (value != m_");
             
-            #line 74 "C:\Users\hegen\Desktop\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 74 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
             
             #line default
             #line hidden
             this.Write(")\r\n\t\t\t\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\t\t\t\tm_");
             
-            #line 76 "C:\Users\hegen\Desktop\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 76 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
             
             #line default
             #line hidden
             this.Write(" = value;\r\n\t\t\t\t\t\t\t\t\t\tOnPropertyChanged(\"");
             
-            #line 77 "C:\Users\hegen\Desktop\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 77 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
             
             #line default
             #line hidden
             this.Write("\");\r\n\t\t\t\t\t\t\t\t\t}\r\n\t\t\t\t\t\t\t\t\t}\r\n\t\t\t\t\t\t\t\t}\r\n\t\t\t\t\t\t\t");
             
-            #line 81 "C:\Users\hegen\Desktop\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 81 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
 
 					  }
 				      
@@ -230,51 +229,51 @@ namespace AutomaticCode
             
             #line default
             #line hidden
-            this.Write(" \r\n\t\t\t\t\t\t\tprivate Nullable<int> m_");
+            this.Write(" \r\n\t\t\t\t\t\t\tprivate int? m_");
             
-            #line 91 "C:\Users\hegen\Desktop\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 91 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
             
             #line default
             #line hidden
-            this.Write(";\r\n\t\t\t\t\t\t\tpublic Nullable<int> ");
+            this.Write(";\r\n\t\t\t\t\t\t\tpublic int? ");
             
-            #line 92 "C:\Users\hegen\Desktop\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 92 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
             
             #line default
             #line hidden
             this.Write("\r\n\t\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\t\tget { return m_");
             
-            #line 94 "C:\Users\hegen\Desktop\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 94 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
             
             #line default
             #line hidden
             this.Write("; }\r\n\t\t\t\t\t\t\t\tset\r\n\t\t\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\t\t\tif (value != m_");
             
-            #line 97 "C:\Users\hegen\Desktop\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 97 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
             
             #line default
             #line hidden
             this.Write(")\r\n\t\t\t\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\t\t\t\tm_");
             
-            #line 99 "C:\Users\hegen\Desktop\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 99 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
             
             #line default
             #line hidden
             this.Write(" = value;\r\n\t\t\t\t\t\t\t\t\t\tOnPropertyChanged(\"");
             
-            #line 100 "C:\Users\hegen\Desktop\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 100 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
             
             #line default
             #line hidden
             this.Write("\");\r\n\t\t\t\t\t\t\t\t\t}\r\n\t\t\t\t\t\t\t\t }\r\n\t\t\t\t\t\t\t  }\r\n\t\t\t\t\t\t\t");
             
-            #line 104 "C:\Users\hegen\Desktop\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 104 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
 
 					  }
 					  else
@@ -285,49 +284,49 @@ namespace AutomaticCode
             #line hidden
             this.Write(" \r\n\t\t\t\t\t\t\tprivate int m_");
             
-            #line 109 "C:\Users\hegen\Desktop\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 109 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
             
             #line default
             #line hidden
             this.Write(";\r\n\t\t\t\t\t\t\tpublic int ");
             
-            #line 110 "C:\Users\hegen\Desktop\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 110 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
             
             #line default
             #line hidden
             this.Write("\r\n\t\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\t\tget { return m_");
             
-            #line 112 "C:\Users\hegen\Desktop\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 112 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
             
             #line default
             #line hidden
             this.Write("; }\r\n\t\t\t\t\t\t\t\tset\r\n\t\t\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\t\t\tif (value != m_");
             
-            #line 115 "C:\Users\hegen\Desktop\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 115 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
             
             #line default
             #line hidden
             this.Write(")\r\n\t\t\t\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\t\t\t\tm_");
             
-            #line 117 "C:\Users\hegen\Desktop\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 117 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
             
             #line default
             #line hidden
             this.Write(" = value;\r\n\t\t\t\t\t\t\t\t\t\tOnPropertyChanged(\"");
             
-            #line 118 "C:\Users\hegen\Desktop\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 118 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
             
             #line default
             #line hidden
             this.Write("\");\r\n\t\t\t\t\t\t\t\t\t}\r\n\t\t\t\t\t\t\t\t\t}\r\n\t\t\t\t\t\t\t\t}\r\n\t\t\t\t\t\t\t");
             
-            #line 122 "C:\Users\hegen\Desktop\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 122 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
 
 					  }
 				   }
@@ -340,51 +339,51 @@ namespace AutomaticCode
             
             #line default
             #line hidden
-            this.Write(" \r\n\t\t\t\t\t\t\tprivate Nullable<bool> m_");
+            this.Write(" \r\n\t\t\t\t\t\t\tprivate bool? m_");
             
-            #line 131 "C:\Users\hegen\Desktop\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 131 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
             
             #line default
             #line hidden
-            this.Write(";\r\n\t\t\t\t\t\t\tpublic Nullable<bool> ");
+            this.Write(";\r\n\t\t\t\t\t\t\tpublic bool? ");
             
-            #line 132 "C:\Users\hegen\Desktop\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 132 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
             
             #line default
             #line hidden
             this.Write("\r\n\t\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\t\tget { return m_");
             
-            #line 134 "C:\Users\hegen\Desktop\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 134 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
             
             #line default
             #line hidden
             this.Write("; }\r\n\t\t\t\t\t\t\t\tset\r\n\t\t\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\t\t\tif (value != m_");
             
-            #line 137 "C:\Users\hegen\Desktop\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 137 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
             
             #line default
             #line hidden
             this.Write(")\r\n\t\t\t\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\t\t\t\tm_");
             
-            #line 139 "C:\Users\hegen\Desktop\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 139 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
             
             #line default
             #line hidden
             this.Write(" = value;\r\n\t\t\t\t\t\t\t\t\t\tOnPropertyChanged(\"");
             
-            #line 140 "C:\Users\hegen\Desktop\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 140 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
             
             #line default
             #line hidden
             this.Write("\");\r\n\t\t\t\t\t\t\t\t\t}\r\n\t\t\t\t\t\t\t\t }\r\n\t\t\t\t\t\t\t  }\r\n\t\t\t\t\t\t\t");
             
-            #line 144 "C:\Users\hegen\Desktop\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 144 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
 
 					  }
 					  else
@@ -395,49 +394,49 @@ namespace AutomaticCode
             #line hidden
             this.Write(" \r\n\t\t\t\t\t\t\tprivate bool m_");
             
-            #line 149 "C:\Users\hegen\Desktop\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 149 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
             
             #line default
             #line hidden
             this.Write(";\r\n\t\t\t\t\t\t\tpublic bool ");
             
-            #line 150 "C:\Users\hegen\Desktop\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 150 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
             
             #line default
             #line hidden
             this.Write("\r\n\t\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\t\tget { return m_");
             
-            #line 152 "C:\Users\hegen\Desktop\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 152 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
             
             #line default
             #line hidden
             this.Write("; }\r\n\t\t\t\t\t\t\t\tset\r\n\t\t\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\t\t\tif (value != m_");
             
-            #line 155 "C:\Users\hegen\Desktop\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 155 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
             
             #line default
             #line hidden
             this.Write(")\r\n\t\t\t\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\t\t\t\tm_");
             
-            #line 157 "C:\Users\hegen\Desktop\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 157 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
             
             #line default
             #line hidden
             this.Write(" = value;\r\n\t\t\t\t\t\t\t\t\t\tOnPropertyChanged(\"");
             
-            #line 158 "C:\Users\hegen\Desktop\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 158 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
             
             #line default
             #line hidden
             this.Write("\");\r\n\t\t\t\t\t\t\t\t\t}\r\n\t\t\t\t\t\t\t\t\t}\r\n\t\t\t\t\t\t\t\t}\r\n\t\t\t\t\t\t\t");
             
-            #line 162 "C:\Users\hegen\Desktop\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 162 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
 
 					  }
 				   }
@@ -452,51 +451,51 @@ namespace AutomaticCode
             
             #line default
             #line hidden
-            this.Write(" \r\n\t\t\t\t\t\t\tprivate Nullable<decimal> m_");
+            this.Write(" \r\n\t\t\t\t\t\t\tprivate decimal? m_");
             
-            #line 173 "C:\Users\hegen\Desktop\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 173 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
             
             #line default
             #line hidden
-            this.Write(";\r\n\t\t\t\t\t\t\tpublic Nullable<decimal> ");
+            this.Write(";\r\n\t\t\t\t\t\t\tpublic decimal? ");
             
-            #line 174 "C:\Users\hegen\Desktop\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 174 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
             
             #line default
             #line hidden
             this.Write("\r\n\t\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\t\tget { return m_");
             
-            #line 176 "C:\Users\hegen\Desktop\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 176 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
             
             #line default
             #line hidden
             this.Write("; }\r\n\t\t\t\t\t\t\t\tset\r\n\t\t\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\t\t\tif (value != m_");
             
-            #line 179 "C:\Users\hegen\Desktop\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 179 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
             
             #line default
             #line hidden
             this.Write(")\r\n\t\t\t\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\t\t\t\tm_");
             
-            #line 181 "C:\Users\hegen\Desktop\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 181 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
             
             #line default
             #line hidden
             this.Write(" = value;\r\n\t\t\t\t\t\t\t\t\t\tOnPropertyChanged(\"");
             
-            #line 182 "C:\Users\hegen\Desktop\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 182 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
             
             #line default
             #line hidden
             this.Write("\");\r\n\t\t\t\t\t\t\t\t\t}\r\n\t\t\t\t\t\t\t\t }\r\n\t\t\t\t\t\t\t  }\r\n\t\t\t\t\t\t\t");
             
-            #line 186 "C:\Users\hegen\Desktop\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 186 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
 
 					  }
 					  else
@@ -507,49 +506,158 @@ namespace AutomaticCode
             #line hidden
             this.Write(" \r\n\t\t\t\t\t\t\tprivate decimal m_");
             
-            #line 191 "C:\Users\hegen\Desktop\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 191 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
             
             #line default
             #line hidden
             this.Write(";\r\n\t\t\t\t\t\t\tpublic decimal ");
             
-            #line 192 "C:\Users\hegen\Desktop\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 192 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
             
             #line default
             #line hidden
             this.Write("\r\n\t\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\t\tget { return m_");
             
-            #line 194 "C:\Users\hegen\Desktop\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 194 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
             
             #line default
             #line hidden
             this.Write("; }\r\n\t\t\t\t\t\t\t\tset\r\n\t\t\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\t\t\tif (value != m_");
             
-            #line 197 "C:\Users\hegen\Desktop\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 197 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
             
             #line default
             #line hidden
             this.Write(")\r\n\t\t\t\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\t\t\t\tm_");
             
-            #line 199 "C:\Users\hegen\Desktop\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 199 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
             
             #line default
             #line hidden
             this.Write(" = value;\r\n\t\t\t\t\t\t\t\t\t\tOnPropertyChanged(\"");
             
-            #line 200 "C:\Users\hegen\Desktop\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 200 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
             
             #line default
             #line hidden
             this.Write("\");\r\n\t\t\t\t\t\t\t\t\t}\r\n\t\t\t\t\t\t\t\t\t}\r\n\t\t\t\t\t\t\t\t}\r\n\t\t\t\t\t\t\t");
             
-            #line 204 "C:\Users\hegen\Desktop\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 204 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+
+					  }
+				   }
+				   if(item.DataType=="uniqueidentifier")
+				   {
+				      if(item.Nullable=="yes")
+					  {
+					     
+            
+            #line default
+            #line hidden
+            this.Write(" \r\n\t\t\t\t\t\t\tprivate Guid? m_");
+            
+            #line 212 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
+            
+            #line default
+            #line hidden
+            this.Write(";\r\n\t\t\t\t\t\t\tpublic Guid? ");
+            
+            #line 213 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
+            
+            #line default
+            #line hidden
+            this.Write("\r\n\t\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\t\tget { return m_");
+            
+            #line 215 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
+            
+            #line default
+            #line hidden
+            this.Write("; }\r\n\t\t\t\t\t\t\t\tset\r\n\t\t\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\t\t\tif (value != m_");
+            
+            #line 218 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
+            
+            #line default
+            #line hidden
+            this.Write(")\r\n\t\t\t\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\t\t\t\tm_");
+            
+            #line 220 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
+            
+            #line default
+            #line hidden
+            this.Write(" = value;\r\n\t\t\t\t\t\t\t\t\t\tOnPropertyChanged(\"");
+            
+            #line 221 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
+            
+            #line default
+            #line hidden
+            this.Write("\");\r\n\t\t\t\t\t\t\t\t\t}\r\n\t\t\t\t\t\t\t\t }\r\n\t\t\t\t\t\t\t  }\r\n\t\t\t\t\t\t\t");
+            
+            #line 225 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+
+					  }
+					  else
+					  {
+					       
+            
+            #line default
+            #line hidden
+            this.Write(" \r\n\t\t\t\t\t\t\tprivate Guid m_");
+            
+            #line 230 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
+            
+            #line default
+            #line hidden
+            this.Write(";\r\n\t\t\t\t\t\t\tpublic Guid ");
+            
+            #line 231 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
+            
+            #line default
+            #line hidden
+            this.Write("\r\n\t\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\t\tget { return m_");
+            
+            #line 233 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
+            
+            #line default
+            #line hidden
+            this.Write("; }\r\n\t\t\t\t\t\t\t\tset\r\n\t\t\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\t\t\tif (value != m_");
+            
+            #line 236 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
+            
+            #line default
+            #line hidden
+            this.Write(")\r\n\t\t\t\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\t\t\t\tm_");
+            
+            #line 238 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
+            
+            #line default
+            #line hidden
+            this.Write(" = value;\r\n\t\t\t\t\t\t\t\t\t\tOnPropertyChanged(\"");
+            
+            #line 239 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
+            
+            #line default
+            #line hidden
+            this.Write("\");\r\n\t\t\t\t\t\t\t\t\t}\r\n\t\t\t\t\t\t\t\t }\r\n\t\t\t\t\t\t\t  }\r\n\t\t\t\t\t\t\t");
+            
+            #line 243 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
 
 					  }
 				   }
@@ -559,18 +667,26 @@ namespace AutomaticCode
             
             #line default
             #line hidden
-            this.Write("\t\t   #endregion\r\n\r\n\t\t   #region Method\r\n        /// <summary>\r\n        /// 新增\r\n  " +
-                    "      /// </summary>\r\n        /// <returns></returns>\r\n        public bool Inser" +
-                    "tEntity()\r\n        {\r\n\t\t    string sql=$@\"INSERT INTO ");
+            this.Write(@"		   #endregion
+
+		   #region Method
+        /// <summary>
+        /// 新增
+        /// </summary>
+        /// <returns></returns>
+        public bool InsertEntity()
+        {
+		    StringBuilder sb = new StringBuilder();
+			sb.Append(""INSERT INTO ");
             
-            #line 219 "C:\Users\hegen\Desktop\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 259 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(DataName));
             
             #line default
             #line hidden
-            this.Write("(");
+            this.Write("(\");\r\n\t\t    ");
             
-            #line 219 "C:\Users\hegen\Desktop\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 260 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
 
 			    int num=ColumnList.Count;
 				int i=0;
@@ -583,16 +699,16 @@ namespace AutomaticCode
             
             #line default
             #line hidden
-            this.Write("\t\t\t\t\t   ");
+            this.Write("\t\t\t\t\t   sb.Append(\"");
             
-            #line 228 "C:\Users\hegen\Desktop\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 269 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
             
             #line default
             #line hidden
-            this.Write("\r\n\t\t\t\t\t   ");
+            this.Write("\");\r\n\t\t\t\t\t   \r\n\t\t\t\t\t   ");
             
-            #line 229 "C:\Users\hegen\Desktop\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 271 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
 
 					}
 					else
@@ -601,16 +717,16 @@ namespace AutomaticCode
             
             #line default
             #line hidden
-            this.Write("\t\t\t\t\t   ");
+            this.Write("\t\t\t\t\t\tsb.Append(\"");
             
-            #line 234 "C:\Users\hegen\Desktop\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 276 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(item.Name+","));
             
             #line default
             #line hidden
-            this.Write("\r\n\t\t\t\t\t   ");
+            this.Write("\");\r\n\t\t\t\t\t   ");
             
-            #line 235 "C:\Users\hegen\Desktop\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 277 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
 
 					}
 				}
@@ -618,9 +734,9 @@ namespace AutomaticCode
             
             #line default
             #line hidden
-            this.Write(") VALUES (");
+            this.Write("sb.Append(\") VALUES (\");");
             
-            #line 238 "C:\Users\hegen\Desktop\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 280 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
 
 			    int j=0;
 			    foreach(var item in ColumnList)
@@ -628,46 +744,175 @@ namespace AutomaticCode
 			        j++;
 					if(j==num)
 					{
-					   
+					   if(item.DataType=="nvarchar" || 
+				       item.DataType=="varchar" || 
+					   item.DataType=="text" || 
+					   item.DataType=="char"
+					   )
+					   {
+					     if(item.Nullable=="no")
+						 {
+						    
             
             #line default
             #line hidden
-            this.Write("\t\t\t\t\t   \'{");
+            this.Write("\t\t\t\t\t\t      sb.Append(");
             
-            #line 246 "C:\Users\hegen\Desktop\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 296 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
             
             #line default
             #line hidden
-            this.Write("}\'\r\n\t\t\t\t\t   ");
+            this.Write("==\"\" ? \"\" : \"\'\" + ");
             
-            #line 247 "C:\Users\hegen\Desktop\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 296 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
+            
+            #line default
+            #line hidden
+            this.Write(" + \"\'\"); \r\n\t\t\t\t\t        ");
+            
+            #line 297 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+  
+						 }
+					     
+            
+            #line default
+            #line hidden
+            this.Write("\t\t\t\t\t\t   sb.Append(");
+            
+            #line 300 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
+            
+            #line default
+            #line hidden
+            this.Write("==\"\" ? \"NULL\" : \"\'\" + ");
+            
+            #line 300 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
+            
+            #line default
+            #line hidden
+            this.Write(" + \"\'\"); \r\n\t\t\t\t\t     ");
+            
+            #line 301 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
 
+					   }
+					   else
+					   {
+					       
+            
+            #line default
+            #line hidden
+            this.Write("\t\t\t\t\t\t     sb.Append(");
+            
+            #line 306 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
+            
+            #line default
+            #line hidden
+            this.Write("==null ? \"NULL\" : \"\'\" + ");
+            
+            #line 306 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
+            
+            #line default
+            #line hidden
+            this.Write(" + \"\'\"); \r\n\t\t\t\t\t       ");
+            
+            #line 307 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+
+					   }
 					}
 					else
-					{
-					    
+					{  
+					     if(item.DataType=="nvarchar" || 
+				       item.DataType=="varchar" || 
+					   item.DataType=="text" || 
+					   item.DataType=="char"
+					   )
+					   {
+					     if(item.Nullable=="no")
+						 {
+						    
             
             #line default
             #line hidden
-            this.Write("\t\t\t\t\t   \'{");
+            this.Write("\t\t\t\t\t\t      sb.Append(");
             
-            #line 252 "C:\Users\hegen\Desktop\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 321 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
             
             #line default
             #line hidden
-            this.Write("}\',\r\n\t\t\t\t\t   ");
+            this.Write("==\"\" ? \"\'\'\" : \"\'\" + ");
             
-            #line 253 "C:\Users\hegen\Desktop\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 321 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
+            
+            #line default
+            #line hidden
+            this.Write(" + \"\'\" + \",\"); \r\n\t\t\t\t\t        ");
+            
+            #line 322 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+  
+						 }
+					     
+            
+            #line default
+            #line hidden
+            this.Write("\t\t\t\t\t\t   sb.Append(");
+            
+            #line 325 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
+            
+            #line default
+            #line hidden
+            this.Write("==\"\" ? \"NULL\" : \"\'\" + ");
+            
+            #line 325 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
+            
+            #line default
+            #line hidden
+            this.Write(" + \"\'\" + \",\"); \r\n\t\t\t\t\t     ");
+            
+            #line 326 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
 
+					   }
+					   else
+					   {
+					       
+            
+            #line default
+            #line hidden
+            this.Write("\t\t\t\t\t\t     sb.Append(");
+            
+            #line 331 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
+            
+            #line default
+            #line hidden
+            this.Write("==null ? null : \"\'\" + ");
+            
+            #line 331 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
+            
+            #line default
+            #line hidden
+            this.Write(" + \"\'\" + \",\"); \r\n\t\t\t\t\t       ");
+            
+            #line 332 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+
+					   }
 					}
 				}
 			
             
             #line default
             #line hidden
-            this.Write(@")"";
+            this.Write(@"			sb.Append("")"");
+			string sql=sb.ToString();
 			int result = DB.ExecuteNonQuery(sql);
             return (result>0);
         }
@@ -678,16 +923,17 @@ namespace AutomaticCode
         /// <returns></returns>
         public bool UpdateEntity()
         {
-		    string sql=$@""UPDATE [dbo].[");
+		    StringBuilder sb = new StringBuilder();
+            sb.Append(""UPDATE [dbo].[");
             
-            #line 267 "C:\Users\hegen\Desktop\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 350 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(DataName));
             
             #line default
             #line hidden
-            this.Write("]\r\n\t\t\t\t\tSET \r\n\t\t\t\t ");
+            this.Write("] SET \");\r\n\t\t\t");
             
-            #line 269 "C:\Users\hegen\Desktop\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 351 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
 
 				       int s=0;
 					   foreach(var item in ColumnList)
@@ -697,53 +943,220 @@ namespace AutomaticCode
 						  {
 						     if(s==num)
 							  {
-								 
+								 if(item.DataType=="nvarchar" || 
+				                      item.DataType=="varchar" || 
+					                  item.DataType=="text" || 
+					                  item.DataType=="char"
+					                 )
+					                {
+									   if(item.Nullable=="no")
+									   {
+									       
             
             #line default
             #line hidden
-            this.Write("\t\t\t\t\t\t\t\t  ");
+            this.Write("\t\t\t\t\t\t\t\t          sb.Append(\"");
             
-            #line 279 "C:\Users\hegen\Desktop\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 369 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
             
             #line default
             #line hidden
-            this.Write("=\'{");
+            this.Write("=\");\r\n                                          sb.Append(");
             
-            #line 279 "C:\Users\hegen\Desktop\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 370 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
             
             #line default
             #line hidden
-            this.Write("}\'\r\n\t\t\t\t\t\t\t\t ");
+            this.Write(" == \"\" ? \"\'\'\" : \"\'\" + ");
             
-            #line 280 "C:\Users\hegen\Desktop\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 370 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
+            
+            #line default
+            #line hidden
+            this.Write(" + \"\'\");\r\n\t\t\t\t\t\t\t\t          ");
+            
+            #line 371 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
 
+									    }
+										else
+										{
+										   
+            
+            #line default
+            #line hidden
+            this.Write("\t\t\t\t\t\t\t\t             sb.Append(\"");
+            
+            #line 376 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
+            
+            #line default
+            #line hidden
+            this.Write("=\");\r\n                                             sb.Append(");
+            
+            #line 377 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
+            
+            #line default
+            #line hidden
+            this.Write(" == \"\" ? \"NULL\" : \"\'\" + ");
+            
+            #line 377 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
+            
+            #line default
+            #line hidden
+            this.Write(" + \"\'\");\r\n\t\t\t\t\t\t\t\t           ");
+            
+            #line 378 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+
+										}
+								           
+								    }
+									else
+									{
+									      
+            
+            #line default
+            #line hidden
+            this.Write("\t\t\t\t\t\t\t\t             sb.Append(\"");
+            
+            #line 385 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
+            
+            #line default
+            #line hidden
+            this.Write("=\");\r\n                                             sb.Append(");
+            
+            #line 386 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
+            
+            #line default
+            #line hidden
+            this.Write(" == null ? \"NULL\" : \"\'\" + ");
+            
+            #line 386 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
+            
+            #line default
+            #line hidden
+            this.Write(" + \"\'\");\r\n\t\t\t\t\t\t\t\t           ");
+            
+            #line 387 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+
+									}
 							  }
 							  else
 							  {
-								   
+							       if(item.DataType=="nvarchar" || 
+				                      item.DataType=="varchar" || 
+					                  item.DataType=="text" || 
+					                  item.DataType=="char"
+					                 )
+					                {
+									   if(item.Nullable=="no")
+									   {
+									       
             
             #line default
             #line hidden
-            this.Write("\t\t\t\t\t\t\t\t   ");
+            this.Write("\t\t\t\t\t\t\t\t          sb.Append(\"");
             
-            #line 285 "C:\Users\hegen\Desktop\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 401 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
             
             #line default
             #line hidden
-            this.Write("=\'{");
+            this.Write("=\");\r\n                                          sb.Append(");
             
-            #line 285 "C:\Users\hegen\Desktop\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 402 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
             
             #line default
             #line hidden
-            this.Write("}\',\r\n\t\t\t\t\t\t\t\t  ");
+            this.Write(" == \"\" ? \"\'\'\" : \"\'\" + ");
             
-            #line 286 "C:\Users\hegen\Desktop\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 402 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
+            
+            #line default
+            #line hidden
+            this.Write(" + \"\'\");\r\n                                          sb.Append(\",\");\r\n\t\t\t\t\t\t\t\t    " +
+                    "      ");
+            
+            #line 404 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
 
+									    }
+										else
+										{
+										   
+            
+            #line default
+            #line hidden
+            this.Write("\t\t\t\t\t\t\t\t             sb.Append(\"");
+            
+            #line 409 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
+            
+            #line default
+            #line hidden
+            this.Write("=\");\r\n                                             sb.Append(");
+            
+            #line 410 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
+            
+            #line default
+            #line hidden
+            this.Write(" == \"\" ? \"NULL\" : \"\'\" + ");
+            
+            #line 410 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
+            
+            #line default
+            #line hidden
+            this.Write(" + \"\'\");\r\n                                             sb.Append(\",\");\r\n\t\t\t\t\t\t\t\t " +
+                    "          ");
+            
+            #line 412 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+
+										}
+								           
+								    }
+									else
+									{
+									      
+            
+            #line default
+            #line hidden
+            this.Write("\t\t\t\t\t\t\t\t             sb.Append(\"");
+            
+            #line 419 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
+            
+            #line default
+            #line hidden
+            this.Write("=\");\r\n                                             sb.Append(");
+            
+            #line 420 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
+            
+            #line default
+            #line hidden
+            this.Write(" == null ? \"NULL\" : \"\'\" + ");
+            
+            #line 420 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
+            
+            #line default
+            #line hidden
+            this.Write(" + \"\'\");\r\n                                             sb.Append(\",\");\r\n\t\t\t\t\t\t\t\t " +
+                    "          ");
+            
+            #line 422 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+
+									}
 							  }
 						  }
 					}
@@ -751,9 +1164,9 @@ namespace AutomaticCode
             
             #line default
             #line hidden
-            this.Write("\t\t\t\t  WHERE \r\n\t\t\t\t   ");
+            this.Write("\t\t\t\t  sb.Append(\" WHERE \");\r\n\t\t\t\t   ");
             
-            #line 292 "C:\Users\hegen\Desktop\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 429 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
 
 				      var pklist = ColumnList.Where(p => p.IsPK).ToList();
 					  int count = pklist.Count;
@@ -764,27 +1177,30 @@ namespace AutomaticCode
 						   if (k == count)
 							{
 							    
+								   
             
             #line default
             #line hidden
-            this.Write("\t\t\t\t\t\t\t\t  ");
+            this.Write("\t\t\t\t\t\t\t\t     sb.Append($\"");
             
-            #line 302 "C:\Users\hegen\Desktop\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 440 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pk.Name));
             
             #line default
             #line hidden
             this.Write("=\'{");
             
-            #line 302 "C:\Users\hegen\Desktop\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 440 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pk.Name));
             
             #line default
             #line hidden
-            this.Write("}\'\r\n\t\t\t\t\t\t\t\t");
+            this.Write("}\' \");\r\n\t\t\t\t\t\t\t\t   ");
             
-            #line 303 "C:\Users\hegen\Desktop\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 441 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
 
+								
+							    
 							}
 							else
 							{
@@ -792,23 +1208,23 @@ namespace AutomaticCode
             
             #line default
             #line hidden
-            this.Write("\t\t\t\t\t\t\t\t  ");
+            this.Write("\t\t\t\t\t\t\t\t   sb.Append($\"");
             
-            #line 308 "C:\Users\hegen\Desktop\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 448 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pk.Name));
             
             #line default
             #line hidden
             this.Write("=\'{");
             
-            #line 308 "C:\Users\hegen\Desktop\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 448 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pk.Name));
             
             #line default
             #line hidden
-            this.Write("}\',\r\n\t\t\t\t\t\t\t\t");
+            this.Write("}\'\" + \" and \");\r\n\t\t\t\t\t\t\t\t");
             
-            #line 309 "C:\Users\hegen\Desktop\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 449 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
 
 							}
 					    }
@@ -816,7 +1232,7 @@ namespace AutomaticCode
             
             #line default
             #line hidden
-            this.Write(@"				"";
+            this.Write(@"			 string sql = sb.ToString();	                 
 			 int result = DB.ExecuteNonQuery(sql);
              return (result>0);
         }
@@ -837,21 +1253,21 @@ namespace AutomaticCode
         /// <returns></returns>
         public ObservableCollection<");
             
-            #line 332 "C:\Users\hegen\Desktop\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 472 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(ClassName));
             
             #line default
             #line hidden
             this.Write("> SelectEntity(string sql)\r\n        {\r\n\t\t     ObservableCollection<");
             
-            #line 334 "C:\Users\hegen\Desktop\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 474 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(ClassName));
             
             #line default
             #line hidden
             this.Write("> entityList=new ObservableCollection<");
             
-            #line 334 "C:\Users\hegen\Desktop\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 474 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(ClassName));
             
             #line default
@@ -859,28 +1275,27 @@ namespace AutomaticCode
             this.Write(">();\r\n\t\t     DataTable dt=DB.ExecuteSelect(sql).Tables[0]; \r\n\t\t\t for(int i=0;i<dt" +
                     ".Rows.Count;i++)\r\n\t\t\t {\r\n\t\t\t     ");
             
-            #line 338 "C:\Users\hegen\Desktop\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 478 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(ClassName));
             
             #line default
             #line hidden
             this.Write(" entityModel=new ");
             
-            #line 338 "C:\Users\hegen\Desktop\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 478 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(ClassName));
             
             #line default
             #line hidden
             this.Write("();\r\n\t\t\t\t ");
             
-            #line 339 "C:\Users\hegen\Desktop\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 479 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
 
 				  foreach(var item in ColumnList)
 				  {
 			            if(item.DataType=="nvarchar" || 
 							item.DataType=="varchar" || 
 							item.DataType=="text" || 
-							item.DataType=="uniqueidentifier" ||
 							item.DataType=="char"
 							)
 						{
@@ -890,28 +1305,28 @@ namespace AutomaticCode
             #line hidden
             this.Write("\t\t\t\t\t\t    entityModel.");
             
-            #line 350 "C:\Users\hegen\Desktop\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 489 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
             
             #line default
             #line hidden
             this.Write("=dt.Rows[i][\"");
             
-            #line 350 "C:\Users\hegen\Desktop\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 489 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
             
             #line default
             #line hidden
             this.Write("\"]==DBNull.Value?\"\":dt.Rows[i][\"");
             
-            #line 350 "C:\Users\hegen\Desktop\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 489 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
             
             #line default
             #line hidden
             this.Write("\"].ToString();\r\n\t\t\t\t\t\t\t");
             
-            #line 351 "C:\Users\hegen\Desktop\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 490 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
 
 						}
 						if(item.DataType=="date" || 
@@ -926,28 +1341,28 @@ namespace AutomaticCode
             #line hidden
             this.Write("\t\t\t\t\t\t    entityModel.");
             
-            #line 360 "C:\Users\hegen\Desktop\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 499 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
             
             #line default
             #line hidden
             this.Write("=dt.Rows[i][\"");
             
-            #line 360 "C:\Users\hegen\Desktop\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 499 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
             
             #line default
             #line hidden
             this.Write("\"]==DBNull.Value?(DateTime?)null:Convert.ToDateTime(dt.Rows[i][\"");
             
-            #line 360 "C:\Users\hegen\Desktop\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 499 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
             
             #line default
             #line hidden
             this.Write("\"]);\r\n\t\t\t\t\t\t\t");
             
-            #line 361 "C:\Users\hegen\Desktop\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 500 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
 
 						}
 						if(item.DataType=="int")
@@ -958,28 +1373,28 @@ namespace AutomaticCode
             #line hidden
             this.Write("\t\t\t\t\t\t    entityModel.");
             
-            #line 366 "C:\Users\hegen\Desktop\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 505 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
             
             #line default
             #line hidden
             this.Write("=dt.Rows[i][\"");
             
-            #line 366 "C:\Users\hegen\Desktop\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 505 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
             
             #line default
             #line hidden
             this.Write("\"]==DBNull.Value?(int?)null:Convert.ToInt32(dt.Rows[i][\"");
             
-            #line 366 "C:\Users\hegen\Desktop\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 505 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
             
             #line default
             #line hidden
             this.Write("\"]);\r\n\t\t\t\t\t\t\t");
             
-            #line 367 "C:\Users\hegen\Desktop\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 506 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
 
 						}
 						 if(item.DataType=="bit")
@@ -990,28 +1405,28 @@ namespace AutomaticCode
             #line hidden
             this.Write("\t\t\t\t\t\t    entityModel.");
             
-            #line 372 "C:\Users\hegen\Desktop\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 511 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
             
             #line default
             #line hidden
             this.Write("=dt.Rows[i][\"");
             
-            #line 372 "C:\Users\hegen\Desktop\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 511 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
             
             #line default
             #line hidden
             this.Write("\"]==DBNull.Value?(bool?)null:Convert.ToBoolean(dt.Rows[i][\"");
             
-            #line 372 "C:\Users\hegen\Desktop\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 511 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
             
             #line default
             #line hidden
             this.Write("\"]);\r\n\t\t\t\t\t\t\t");
             
-            #line 373 "C:\Users\hegen\Desktop\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 512 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
 
 						 }
 						 if(item.DataType=="decimal" 
@@ -1024,30 +1439,62 @@ namespace AutomaticCode
             #line hidden
             this.Write("\t\t\t\t\t\t    entityModel.");
             
-            #line 380 "C:\Users\hegen\Desktop\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 519 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
             
             #line default
             #line hidden
             this.Write("=dt.Rows[i][\"");
             
-            #line 380 "C:\Users\hegen\Desktop\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 519 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
             
             #line default
             #line hidden
             this.Write("\"]==DBNull.Value?(decimal?)null:Convert.ToDecimal(dt.Rows[i][\"");
             
-            #line 380 "C:\Users\hegen\Desktop\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 519 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
             
             #line default
             #line hidden
             this.Write("\"]);\r\n\t\t\t\t\t\t\t");
             
-            #line 381 "C:\Users\hegen\Desktop\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 520 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
 
 						 }
+						 if(item.DataType=="uniqueidentifier")
+						{
+						    
+            
+            #line default
+            #line hidden
+            this.Write("\t\t\t\t\t\t    entityModel.");
+            
+            #line 525 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
+            
+            #line default
+            #line hidden
+            this.Write("=dt.Rows[i][\"");
+            
+            #line 525 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
+            
+            #line default
+            #line hidden
+            this.Write("\"]==DBNull.Value?(Guid?)null:Guid.Parse(dt.Rows[i][\"");
+            
+            #line 525 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
+            
+            #line default
+            #line hidden
+            this.Write("\"].ToString());\r\n\t\t\t\t\t\t\t");
+            
+            #line 526 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+
+						}
 				  }
 				 
             

@@ -7,6 +7,7 @@
 using System;
 using System.Collections.ObjectModel;
 using System.Data;
+using System.Text;
 namespace CHControl.<#= ClassName #>Manage
 {
     public class <#= ClassName #> : NotificationObject
@@ -18,7 +19,6 @@ namespace CHControl.<#= ClassName #>Manage
 			       if(item.DataType=="nvarchar" || 
 				       item.DataType=="varchar" || 
 					   item.DataType=="text" || 
-					   item.DataType=="uniqueidentifier" ||
 					   item.DataType=="char"
 					   )
 				   {
@@ -47,8 +47,8 @@ namespace CHControl.<#= ClassName #>Manage
 				      if(item.Nullable=="yes")
 					  {
 					      #> 
-							private Nullable<System.DateTime> m_<#= item.Name#>;
-							public Nullable<System.DateTime> <#= item.Name#>
+							private DateTime? m_<#= item.Name#>;
+							public DateTime? <#= item.Name#>
 							{
 								get { return m_<#= item.Name#>; }
 								set
@@ -88,8 +88,8 @@ namespace CHControl.<#= ClassName #>Manage
 				     if(item.Nullable=="yes")
 					  {
 					      #> 
-							private Nullable<int> m_<#= item.Name#>;
-							public Nullable<int> <#= item.Name#>
+							private int? m_<#= item.Name#>;
+							public int? <#= item.Name#>
 							{
 								get { return m_<#= item.Name#>; }
 								set
@@ -128,8 +128,8 @@ namespace CHControl.<#= ClassName #>Manage
 				      if(item.Nullable=="yes")
 					  {
 					      #> 
-							private Nullable<bool> m_<#= item.Name#>;
-							public Nullable<bool> <#= item.Name#>
+							private bool? m_<#= item.Name#>;
+							public bool? <#= item.Name#>
 							{
 								get { return m_<#= item.Name#>; }
 								set
@@ -170,8 +170,8 @@ namespace CHControl.<#= ClassName #>Manage
 				      if(item.Nullable=="yes")
 					  {
 					      #> 
-							private Nullable<decimal> m_<#= item.Name#>;
-							public Nullable<decimal> <#= item.Name#>
+							private decimal? m_<#= item.Name#>;
+							public decimal? <#= item.Name#>
 							{
 								get { return m_<#= item.Name#>; }
 								set
@@ -204,6 +204,45 @@ namespace CHControl.<#= ClassName #>Manage
 							<#
 					  }
 				   }
+				   if(item.DataType=="uniqueidentifier")
+				   {
+				      if(item.Nullable=="yes")
+					  {
+					     #> 
+							private Guid? m_<#= item.Name#>;
+							public Guid? <#= item.Name#>
+							{
+								get { return m_<#= item.Name#>; }
+								set
+								{
+									if (value != m_<#= item.Name#>)
+									{
+										m_<#= item.Name#> = value;
+										OnPropertyChanged("<#= item.Name#>");
+									}
+								 }
+							  }
+							<#
+					  }
+					  else
+					  {
+					       #> 
+							private Guid m_<#= item.Name#>;
+							public Guid <#= item.Name#>
+							{
+								get { return m_<#= item.Name#>; }
+								set
+								{
+									if (value != m_<#= item.Name#>)
+									{
+										m_<#= item.Name#> = value;
+										OnPropertyChanged("<#= item.Name#>");
+									}
+								 }
+							  }
+							<#
+					  }
+				   }
 
 			   }
 		   #>
@@ -216,7 +255,9 @@ namespace CHControl.<#= ClassName #>Manage
         /// <returns></returns>
         public bool InsertEntity()
         {
-		    string sql=$@"INSERT INTO <#= DataName#>(<#
+		    StringBuilder sb = new StringBuilder();
+			sb.Append("INSERT INTO <#= DataName#>(");
+		    <#
 			    int num=ColumnList.Count;
 				int i=0;
 				foreach(var item in ColumnList)
@@ -225,35 +266,76 @@ namespace CHControl.<#= ClassName #>Manage
 					if(i==num)
 					{
 					   #>
-					   <#= item.Name#>
+					   sb.Append("<#= item.Name#>");
+					   
 					   <#
 					}
 					else
 					{
 					    #>
-					   <#= item.Name+"," #>
+						sb.Append("<#= item.Name+"," #>");
 					   <#
 					}
 				}
-			#>) VALUES (<#
+			#>sb.Append(") VALUES (");<#
 			    int j=0;
 			    foreach(var item in ColumnList)
 				{
 			        j++;
 					if(j==num)
 					{
-					   #>
-					   '{<#= item.Name#>}'
-					   <#
+					   if(item.DataType=="nvarchar" || 
+				       item.DataType=="varchar" || 
+					   item.DataType=="text" || 
+					   item.DataType=="char"
+					   )
+					   {
+					     if(item.Nullable=="no")
+						 {
+						    #>
+						      sb.Append(<#= item.Name#>=="" ? "" : "'" + <#= item.Name#> + "'"); 
+					        <#  
+						 }
+					     #>
+						   sb.Append(<#= item.Name#>=="" ? "NULL" : "'" + <#= item.Name#> + "'"); 
+					     <#
+					   }
+					   else
+					   {
+					       #>
+						     sb.Append(<#= item.Name#>==null ? "NULL" : "'" + <#= item.Name#> + "'"); 
+					       <#
+					   }
 					}
 					else
-					{
-					    #>
-					   '{<#= item.Name#>}',
-					   <#
+					{  
+					     if(item.DataType=="nvarchar" || 
+				       item.DataType=="varchar" || 
+					   item.DataType=="text" || 
+					   item.DataType=="char"
+					   )
+					   {
+					     if(item.Nullable=="no")
+						 {
+						    #>
+						      sb.Append(<#= item.Name#>=="" ? "''" : "'" + <#= item.Name#> + "'" + ","); 
+					        <#  
+						 }
+					     #>
+						   sb.Append(<#= item.Name#>=="" ? "NULL" : "'" + <#= item.Name#> + "'" + ","); 
+					     <#
+					   }
+					   else
+					   {
+					       #>
+						     sb.Append(<#= item.Name#>==null ? null : "'" + <#= item.Name#> + "'" + ","); 
+					       <#
+					   }
 					}
 				}
-			#>)";
+			#>
+			sb.Append(")");
+			string sql=sb.ToString();
 			int result = DB.ExecuteNonQuery(sql);
             return (result>0);
         }
@@ -264,9 +346,9 @@ namespace CHControl.<#= ClassName #>Manage
         /// <returns></returns>
         public bool UpdateEntity()
         {
-		    string sql=$@"UPDATE [dbo].[<#= DataName#>]
-					SET 
-				 <#
+		    StringBuilder sb = new StringBuilder();
+            sb.Append("UPDATE [dbo].[<#= DataName#>] SET ");
+			<#
 				       int s=0;
 					   foreach(var item in ColumnList)
 					   {
@@ -275,20 +357,75 @@ namespace CHControl.<#= ClassName #>Manage
 						  {
 						     if(s==num)
 							  {
-								 #>
-								  <#= item.Name#>='{<#= item.Name#>}'
-								 <#
+								 if(item.DataType=="nvarchar" || 
+				                      item.DataType=="varchar" || 
+					                  item.DataType=="text" || 
+					                  item.DataType=="char"
+					                 )
+					                {
+									   if(item.Nullable=="no")
+									   {
+									       #>
+								          sb.Append("<#= item.Name#>=");
+                                          sb.Append(<#= item.Name#> == "" ? "''" : "'" + <#= item.Name#> + "'");
+								          <#
+									    }
+										else
+										{
+										   #>
+								             sb.Append("<#= item.Name#>=");
+                                             sb.Append(<#= item.Name#> == "" ? "NULL" : "'" + <#= item.Name#> + "'");
+								           <#
+										}
+								           
+								    }
+									else
+									{
+									      #>
+								             sb.Append("<#= item.Name#>=");
+                                             sb.Append(<#= item.Name#> == null ? "NULL" : "'" + <#= item.Name#> + "'");
+								           <#
+									}
 							  }
 							  else
 							  {
-								   #>
-								   <#= item.Name#>='{<#= item.Name#>}',
-								  <#
+							       if(item.DataType=="nvarchar" || 
+				                      item.DataType=="varchar" || 
+					                  item.DataType=="text" || 
+					                  item.DataType=="char"
+					                 )
+					                {
+									   if(item.Nullable=="no")
+									   {
+									       #>
+								          sb.Append("<#= item.Name#>=");
+                                          sb.Append(<#= item.Name#> == "" ? "''" : "'" + <#= item.Name#> + "'");
+                                          sb.Append(",");
+								          <#
+									    }
+										else
+										{
+										   #>
+								             sb.Append("<#= item.Name#>=");
+                                             sb.Append(<#= item.Name#> == "" ? "NULL" : "'" + <#= item.Name#> + "'");
+                                             sb.Append(",");
+								           <#
+										}
+								           
+								    }
+									else
+									{
+									      #>
+								             sb.Append("<#= item.Name#>=");
+                                             sb.Append(<#= item.Name#> == null ? "NULL" : "'" + <#= item.Name#> + "'");
+                                             sb.Append(",");
+								           <#
+									}
 							  }
 						  }
 					}
 				  #>
-				  WHERE 
+				  sb.Append(" WHERE ");
 				   <#
 				      var pklist = ColumnList.Where(p => p.IsPK).ToList();
 					  int count = pklist.Count;
@@ -298,19 +435,22 @@ namespace CHControl.<#= ClassName #>Manage
 						   k++;
 						   if (k == count)
 							{
-							    #>
-								  <#= pk.Name#>='{<#= pk.Name#>}'
-								<#
+							    
+								   #>
+								     sb.Append($"<#= pk.Name#>='{<#= pk.Name#>}' ");
+								   <#
+								
+							    
 							}
 							else
 							{
 							    #>
-								  <#= pk.Name#>='{<#= pk.Name#>}',
+								   sb.Append($"<#= pk.Name#>='{<#= pk.Name#>}'" + " and ");
 								<#
 							}
 					    }
 				   #>
-				";
+			 string sql = sb.ToString();	                 
 			 int result = DB.ExecuteNonQuery(sql);
              return (result>0);
         }
@@ -342,7 +482,6 @@ namespace CHControl.<#= ClassName #>Manage
 			            if(item.DataType=="nvarchar" || 
 							item.DataType=="varchar" || 
 							item.DataType=="text" || 
-							item.DataType=="uniqueidentifier" ||
 							item.DataType=="char"
 							)
 						{
@@ -380,6 +519,12 @@ namespace CHControl.<#= ClassName #>Manage
 						    entityModel.<#= item.Name#>=dt.Rows[i]["<#= item.Name#>"]==DBNull.Value?(decimal?)null:Convert.ToDecimal(dt.Rows[i]["<#= item.Name#>"]);
 							<#
 						 }
+						 if(item.DataType=="uniqueidentifier")
+						{
+						    #>
+						    entityModel.<#= item.Name#>=dt.Rows[i]["<#= item.Name#>"]==DBNull.Value?(Guid?)null:Guid.Parse(dt.Rows[i]["<#= item.Name#>"].ToString());
+							<#
+						}
 				  }
 				 #>
 				 entityList.Add(entityModel);
