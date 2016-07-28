@@ -1,0 +1,136 @@
+﻿<#@ template language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ output extension=".cs" #>
+
+<meta:ClosableUserControl  x:Class="CHControl.<#= dataM.ClassName #>Manage.<#= dataM.ClassName #>ManageWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CHControl.<#= dataM.ClassName#>Manage"
+         xmlns:meta="clr-namespace:CHControl.ChwareStudio.MetaModel;assembly=ChwareStudio.MetaModel"
+        mc:Ignorable="d"
+        DataContext="{Binding RelativeSource={RelativeSource Self}}"
+        >
+	 <meta:ClosableUserControl.Resources>
+
+	 </meta:ClosableUserControl.Resources>
+	 <DockPanel Background="#FFF1F6F9" >
+	      <Border Margin="5" Height="auto" VerticalAlignment="Stretch" CornerRadius="0" BorderThickness="1"    Background="#FFF1F6F9"
+                        BorderBrush="#FFF1F6F9"
+                        Padding="5,5,5,10">
+               <Border.Effect>
+                <DropShadowEffect ShadowDepth="2"  Opacity="0.595" Direction="290" />
+               </Border.Effect>
+               <Grid>
+					<Grid.RowDefinitions>
+						<RowDefinition Height="35"></RowDefinition>
+						<RowDefinition ></RowDefinition>
+						<RowDefinition Height="35"></RowDefinition>
+					</Grid.RowDefinitions>
+                
+				 <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="5">
+				     <TextBlock VerticalAlignment="Center"  Margin="0,0,5,3"><Run Text="查询时间："/></TextBlock>
+                    <TextBox Width="100" x:Name="txtStartDate" Text="{Binding ElementName=dpStartTime, Path=SelectedDate, StringFormat=\{0:yyyy-MM-dd\}}" HorizontalAlignment="Center" VerticalAlignment="Center" IsEnabled="False"/>
+                    <DatePicker  Margin="0" x:Name="dpStartTime"  SelectedDateFormat="Short"  Width="30" BorderBrush="{x:Null}" />
+                    <TextBlock VerticalAlignment="Center" Margin="5,0,5,3"><Run Text="至"/></TextBlock>
+                    <TextBox Width="100" x:Name="txtEndDate" Text="{Binding SelectedDate, ElementName=dpEndTime, StringFormat=\{0:yyyy-MM-dd\}}" HorizontalAlignment="Center" VerticalAlignment="Center"  IsEnabled="False"/>
+                    <DatePicker  Margin="0" x:Name="dpEndTime"  SelectedDateFormat="Short"  Width="30" BorderBrush="{x:Null}" />
+                    <Button Margin="5,0,30,0"  Width="auto" x:Name="btnQuery"  Tag="查询" Click="btnQuery_Click">
+                        <StackPanel Orientation="Horizontal" Margin="5,0">
+                            <TextBlock  Text="查询" Margin="3,0,0,0" />
+                        </StackPanel>
+                    </Button>
+				 </StackPanel>
+				 <Grid Grid.Row="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="70*"></ColumnDefinition>
+                        <ColumnDefinition  Width="30*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <GroupBox  Grid.Row="0"  Height="auto"  Margin="5" BorderBrush="#FF2599A4" BorderThickness="1">
+                        <GroupBox.Header>
+                            <Border    BorderThickness="1,1,1,1" Margin="0,0,0,0" BorderBrush="#FFBFCAD0"  CornerRadius="0"    Padding="5,0,5,0" Background="#FF2599A4">
+                                <StackPanel Orientation="Horizontal">
+                                    <Image Margin="0,0,3,0"    Source="Resources/infoEdit.png" />
+                                    <TextBlock Foreground="White"> <#= dataM.ClassName #>列表</TextBlock>
+                                </StackPanel>
+                            </Border>
+                        </GroupBox.Header>
+                        <DataGrid AutoGenerateColumns="False"  VerticalAlignment="Top"      CanUserSortColumns="True"  IsReadOnly="True"  CanUserResizeColumns="True" 
+                              CanUserResizeRows="True"  SelectionMode="Single"  CanUserReorderColumns="True" AlternationCount="2"  RowHeaderWidth="0" CanUserAddRows="False" 
+                                  Margin="5,5,5,5"   ItemsSource="{Binding <#= dataM.ClassName#>List}"  SelectedItem="{Binding <#= dataM.ClassName#>Model}" SelectionChanged="DataGrid_SelectionChanged_1">
+                            <DataGrid.Columns>
+								<#
+								 foreach(var item in dataM.ColumnList)
+			                     {
+								      #>
+									      <DataGridTextColumn Header="<#= item.Name#>"   Binding="{Binding  <#= item.Name#>}"/>
+									  <#
+								 }
+								#>
+                            </DataGrid.Columns>
+                        </DataGrid>
+                    </GroupBox>
+                    <GroupBox DataContext="{Binding <#= dataM.ClassName#>Model}" Grid.Row="0" Grid.Column="1" Height="auto"  Margin="5" BorderBrush="#FF2599A4" BorderThickness="1"  >
+                        <GroupBox.Header>
+                            <Border    BorderThickness="1,1,1,1" Margin="0,0,0,0" BorderBrush="#FFBFCAD0"  CornerRadius="0"    Padding="5,0,5,0" Background="#FF2599A4">
+                                <StackPanel Orientation="Horizontal">
+                                    <Image Margin="0,0,3,0"    Source="Resources/infoEdit.png" />
+                                    <TextBlock Foreground="White"> <#= dataM.ClassName #>详细</TextBlock>
+                                </StackPanel>
+                            </Border>
+                        </GroupBox.Header>
+                        <Grid  HorizontalAlignment="Stretch" >
+                            <Grid.RowDefinitions>
+							     <#
+								  for(int i=0;i<dataM.ColumnList.Count;i++)
+								  {
+								     #>
+									   <RowDefinition Height="Auto" />
+									 <#
+								  }
+								 #>
+								 <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition  Width="Auto"/>
+                                <ColumnDefinition />
+                            </Grid.ColumnDefinitions>
+							<#
+							   int js=0;
+							   foreach(var item in dataM.ColumnList)
+							   {
+							       #>
+								       <TextBlock Grid.Row="<#= js#>" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center"><Run Text="<#= item.Name#>："/></TextBlock>
+                                       <TextBox Grid.Row="<#= js#>" Grid.Column="1" Margin="5" Height="auto" Text="{Binding <#= item.Name#>}"/>
+								   <#
+								   js++;
+							   }
+							#>
+							<StackPanel Grid.Row="<#= js#>" Grid.Column="0" Grid.ColumnSpan="2" HorizontalAlignment="Center" Orientation="Horizontal" Margin="0,10,0,5" >
+                                    <Button  Tag="新增明细" VerticalAlignment="Center" Margin="5,0,5,0"	Width="auto"	Padding="10,0" Click="btnClick_insert"  >
+                                        <StackPanel Orientation="Horizontal">
+                                            <TextBlock Text="新增明细"/>
+                                        </StackPanel>
+                                    </Button>
+                                    <Button VerticalAlignment="Center"  Padding="10,0" Margin="5,0"  Tag="删除明细" Click="btnClick_delete" >
+                                        <StackPanel Orientation="Horizontal">
+                                            <TextBlock Text="删除明细" />
+                                        </StackPanel>
+                                    </Button>
+                                    <Button  Padding="10,0" VerticalAlignment="Center" Margin="5,0,5,0" Width="auto"  Tag="保存设置"   Click="btnClick_save">
+                                        <StackPanel Orientation="Horizontal">
+                                            <TextBlock><Run Text="保存设置"/></TextBlock>
+                                        </StackPanel>
+                                    </Button>
+                                </StackPanel>
+                        </Grid>
+                    </GroupBox>
+					</Grid>
+                </Grid>
+		   </Border>
+	 </DockPanel>
+</meta:ClosableUserControl>

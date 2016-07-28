@@ -1,0 +1,43 @@
+﻿<#@ template debug="false" hostspecific="false" language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ output extension=".cs" #>
+using CHControl.ChwareStudio.MetaAttribute;
+using CHControl.ChwareStudio.Types;
+using Microsoft.Practices.Prism.Modularity;
+using Microsoft.Practices.Prism.Regions;
+using Microsoft.Practices.Unity;
+using System;
+
+namespace CHControl.<#= dataM.ClassName #>Manage
+{
+    [Serializable]
+    [DefaultObject(Catalog = "基础信息", ModuleType = ModuleType.Custom, CustomModuleName = ModuleConsts.ModuleName, Position = 1), Label("<#= dataM.ClassName #>管理")]
+    [Module(ModuleName = ModuleConsts.ModuleName)]
+    [RightResource("<#= ModuleId#>", "<#= dataM.ClassName #>管理")]
+    public class <#= dataM.ClassName #>ManageModule : IModule, IUserRightModule
+    {
+        private readonly IUnityContainer container;
+        private readonly IRegionManager regionManager;
+
+        public <#= dataM.ClassName #>ManageModule(IUnityContainer container, IRegionManager regionManager)
+        {
+            this.container = container;
+            this.regionManager = regionManager;
+        }
+
+        public void Initialize()
+        {
+            container.RegisterType<System.Windows.Controls.UserControl, <#= dataM.ClassName #>ManageWindow>(ModuleConsts.ModuleName);
+        }
+    }
+    /// <summary>
+    /// 定义模块名称，常量
+    /// </summary>
+    public class ModuleConsts
+    {
+        public const string ModuleName = "<#= dataM.ClassName #>ManageModule";
+    }
+}

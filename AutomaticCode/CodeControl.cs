@@ -57,4 +57,60 @@ namespace AutomaticCode
         public string Nullable { get; set; }
         public bool IsPK { get; set; }
     }
+    partial class MainWindows
+    {
+        public DataModel dataM { get; set; }
+
+        public MainWindows(DataModel d)
+        {
+            dataM = d;
+        }
+    }
+    partial class MainCode
+    {
+        public DataModel dataM { get; set; }
+
+        public MainCode(DataModel d)
+        {
+            dataM = d;
+        }
+    }
+    partial class ManageModule
+    {
+        public DataModel dataM { get; set; }
+       
+
+        public string ModuleId { get; set; }
+        public ManageModule(DataModel d)
+        {
+            dataM = d;
+            
+        }
+    }
+    partial class ProjectFile
+    {
+        public DataModel dataM { get; set; }
+        public ProjectFile(DataModel d)
+        {
+            dataM = d;
+        }
+    }
+    partial class AssemblyInfo
+    {
+        public DataModel dataM { get; set; }
+        public string ModuleId { get; set; }
+        public AssemblyInfo(DataModel d)
+        {
+            dataM = d;
+        }
+    }
+    partial class NotificationObject
+    {
+        public DataModel dataM { get; set; }
+        
+        public NotificationObject(DataModel d)
+        {
+            dataM = d;
+        }
+    }
 }

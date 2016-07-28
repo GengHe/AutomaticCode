@@ -43,9 +43,10 @@ namespace AutomaticCode
             
             #line default
             #line hidden
-            this.Write(" : NotificationObject\r\n\t{\r\n\t       #region Attribute\r\n\t       ");
+            this.Write(" : NotificationObject\r\n\t{\r\n\t       #region Attribute\r\n\r\n\t\t   public string Entity" +
+                    "Statu { get; set; }\r\n\t       ");
             
-            #line 17 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 19 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
 
 		       foreach(var item in ColumnList)
 			   {
@@ -61,49 +62,49 @@ namespace AutomaticCode
             #line hidden
             this.Write(" \r\n\t\t\t\t\t\tprivate string m_");
             
-            #line 27 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 29 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
             
             #line default
             #line hidden
             this.Write(";\r\n\t\t\t\t\t\tpublic string ");
             
-            #line 28 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 30 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
             
             #line default
             #line hidden
             this.Write("\r\n\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\tget { return m_");
             
-            #line 30 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 32 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
             
             #line default
             #line hidden
             this.Write("; }\r\n\t\t\t\t\t\t\tset\r\n\t\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\t\tif (value != m_");
             
-            #line 33 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 35 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
             
             #line default
             #line hidden
             this.Write(")\r\n\t\t\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\t\t\tm_");
             
-            #line 35 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 37 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
             
             #line default
             #line hidden
             this.Write(" = value;\r\n\t\t\t\t\t\t\t\t\tOnPropertyChanged(\"");
             
-            #line 36 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 38 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
             
             #line default
             #line hidden
             this.Write("\");\r\n\t\t\t\t\t\t\t\t}\r\n\t\t\t\t\t\t\t}\r\n\t\t\t\t\t\t}\r\n\t\t\t\t\t\t");
             
-            #line 40 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 42 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
 
 				   }
 				   if(item.DataType=="date" || 
@@ -120,49 +121,49 @@ namespace AutomaticCode
             #line hidden
             this.Write(" \r\n\t\t\t\t\t\t\tprivate DateTime? m_");
             
-            #line 51 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 53 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
             
             #line default
             #line hidden
             this.Write(";\r\n\t\t\t\t\t\t\tpublic DateTime? ");
             
-            #line 52 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 54 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
             
             #line default
             #line hidden
             this.Write("\r\n\t\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\t\tget { return m_");
             
-            #line 54 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 56 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
             
             #line default
             #line hidden
             this.Write("; }\r\n\t\t\t\t\t\t\t\tset\r\n\t\t\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\t\t\tif (value != m_");
             
-            #line 57 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 59 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
             
             #line default
             #line hidden
             this.Write(")\r\n\t\t\t\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\t\t\t\tm_");
             
-            #line 59 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 61 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
             
             #line default
             #line hidden
             this.Write(" = value;\r\n\t\t\t\t\t\t\t\t\t\tOnPropertyChanged(\"");
             
-            #line 60 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 62 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
             
             #line default
             #line hidden
             this.Write("\");\r\n\t\t\t\t\t\t\t\t\t}\r\n\t\t\t\t\t\t\t\t }\r\n\t\t\t\t\t\t\t  }\r\n\t\t\t\t\t\t\t");
             
-            #line 64 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 66 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
 
 					  }
 					  else
@@ -173,49 +174,49 @@ namespace AutomaticCode
             #line hidden
             this.Write(" \r\n\t\t\t\t\t\t\tprivate DateTime m_");
             
-            #line 69 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 71 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
             
             #line default
             #line hidden
             this.Write(";\r\n\t\t\t\t\t\t\tpublic DateTime ");
             
-            #line 70 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 72 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
             
             #line default
             #line hidden
             this.Write("\r\n\t\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\t\tget { return m_");
             
-            #line 72 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 74 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
             
             #line default
             #line hidden
             this.Write("; }\r\n\t\t\t\t\t\t\t\tset\r\n\t\t\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\t\t\tif (value != m_");
             
-            #line 75 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 77 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
             
             #line default
             #line hidden
             this.Write(")\r\n\t\t\t\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\t\t\t\tm_");
             
-            #line 77 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 79 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
             
             #line default
             #line hidden
             this.Write(" = value;\r\n\t\t\t\t\t\t\t\t\t\tOnPropertyChanged(\"");
             
-            #line 78 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 80 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
             
             #line default
             #line hidden
             this.Write("\");\r\n\t\t\t\t\t\t\t\t\t}\r\n\t\t\t\t\t\t\t\t\t}\r\n\t\t\t\t\t\t\t\t}\r\n\t\t\t\t\t\t\t");
             
-            #line 82 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 84 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
 
 					  }
 				      
@@ -231,49 +232,49 @@ namespace AutomaticCode
             #line hidden
             this.Write(" \r\n\t\t\t\t\t\t\tprivate int? m_");
             
-            #line 92 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 94 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
             
             #line default
             #line hidden
             this.Write(";\r\n\t\t\t\t\t\t\tpublic int? ");
             
-            #line 93 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 95 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
             
             #line default
             #line hidden
             this.Write("\r\n\t\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\t\tget { return m_");
             
-            #line 95 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 97 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
             
             #line default
             #line hidden
             this.Write("; }\r\n\t\t\t\t\t\t\t\tset\r\n\t\t\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\t\t\tif (value != m_");
             
-            #line 98 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 100 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
             
             #line default
             #line hidden
             this.Write(")\r\n\t\t\t\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\t\t\t\tm_");
             
-            #line 100 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 102 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
             
             #line default
             #line hidden
             this.Write(" = value;\r\n\t\t\t\t\t\t\t\t\t\tOnPropertyChanged(\"");
             
-            #line 101 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 103 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
             
             #line default
             #line hidden
             this.Write("\");\r\n\t\t\t\t\t\t\t\t\t}\r\n\t\t\t\t\t\t\t\t }\r\n\t\t\t\t\t\t\t  }\r\n\t\t\t\t\t\t\t");
             
-            #line 105 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 107 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
 
 					  }
 					  else
@@ -284,49 +285,49 @@ namespace AutomaticCode
             #line hidden
             this.Write(" \r\n\t\t\t\t\t\t\tprivate int m_");
             
-            #line 110 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 112 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
             
             #line default
             #line hidden
             this.Write(";\r\n\t\t\t\t\t\t\tpublic int ");
             
-            #line 111 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 113 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
             
             #line default
             #line hidden
             this.Write("\r\n\t\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\t\tget { return m_");
             
-            #line 113 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 115 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
             
             #line default
             #line hidden
             this.Write("; }\r\n\t\t\t\t\t\t\t\tset\r\n\t\t\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\t\t\tif (value != m_");
             
-            #line 116 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 118 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
             
             #line default
             #line hidden
             this.Write(")\r\n\t\t\t\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\t\t\t\tm_");
             
-            #line 118 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 120 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
             
             #line default
             #line hidden
             this.Write(" = value;\r\n\t\t\t\t\t\t\t\t\t\tOnPropertyChanged(\"");
             
-            #line 119 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 121 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
             
             #line default
             #line hidden
             this.Write("\");\r\n\t\t\t\t\t\t\t\t\t}\r\n\t\t\t\t\t\t\t\t\t}\r\n\t\t\t\t\t\t\t\t}\r\n\t\t\t\t\t\t\t");
             
-            #line 123 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 125 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
 
 					  }
 				   }
@@ -341,49 +342,49 @@ namespace AutomaticCode
             #line hidden
             this.Write(" \r\n\t\t\t\t\t\t\tprivate bool? m_");
             
-            #line 132 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 134 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
             
             #line default
             #line hidden
             this.Write(";\r\n\t\t\t\t\t\t\tpublic bool? ");
             
-            #line 133 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 135 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
             
             #line default
             #line hidden
             this.Write("\r\n\t\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\t\tget { return m_");
             
-            #line 135 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 137 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
             
             #line default
             #line hidden
             this.Write("; }\r\n\t\t\t\t\t\t\t\tset\r\n\t\t\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\t\t\tif (value != m_");
             
-            #line 138 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 140 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
             
             #line default
             #line hidden
             this.Write(")\r\n\t\t\t\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\t\t\t\tm_");
             
-            #line 140 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 142 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
             
             #line default
             #line hidden
             this.Write(" = value;\r\n\t\t\t\t\t\t\t\t\t\tOnPropertyChanged(\"");
             
-            #line 141 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 143 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
             
             #line default
             #line hidden
             this.Write("\");\r\n\t\t\t\t\t\t\t\t\t}\r\n\t\t\t\t\t\t\t\t }\r\n\t\t\t\t\t\t\t  }\r\n\t\t\t\t\t\t\t");
             
-            #line 145 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 147 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
 
 					  }
 					  else
@@ -394,49 +395,49 @@ namespace AutomaticCode
             #line hidden
             this.Write(" \r\n\t\t\t\t\t\t\tprivate bool m_");
             
-            #line 150 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 152 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
             
             #line default
             #line hidden
             this.Write(";\r\n\t\t\t\t\t\t\tpublic bool ");
             
-            #line 151 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 153 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
             
             #line default
             #line hidden
             this.Write("\r\n\t\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\t\tget { return m_");
             
-            #line 153 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 155 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
             
             #line default
             #line hidden
             this.Write("; }\r\n\t\t\t\t\t\t\t\tset\r\n\t\t\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\t\t\tif (value != m_");
             
-            #line 156 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 158 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
             
             #line default
             #line hidden
             this.Write(")\r\n\t\t\t\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\t\t\t\tm_");
             
-            #line 158 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 160 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
             
             #line default
             #line hidden
             this.Write(" = value;\r\n\t\t\t\t\t\t\t\t\t\tOnPropertyChanged(\"");
             
-            #line 159 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 161 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
             
             #line default
             #line hidden
             this.Write("\");\r\n\t\t\t\t\t\t\t\t\t}\r\n\t\t\t\t\t\t\t\t\t}\r\n\t\t\t\t\t\t\t\t}\r\n\t\t\t\t\t\t\t");
             
-            #line 163 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 165 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
 
 					  }
 				   }
@@ -453,49 +454,49 @@ namespace AutomaticCode
             #line hidden
             this.Write(" \r\n\t\t\t\t\t\t\tprivate decimal? m_");
             
-            #line 174 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 176 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
             
             #line default
             #line hidden
             this.Write(";\r\n\t\t\t\t\t\t\tpublic decimal? ");
             
-            #line 175 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 177 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
             
             #line default
             #line hidden
             this.Write("\r\n\t\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\t\tget { return m_");
             
-            #line 177 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 179 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
             
             #line default
             #line hidden
             this.Write("; }\r\n\t\t\t\t\t\t\t\tset\r\n\t\t\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\t\t\tif (value != m_");
             
-            #line 180 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 182 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
             
             #line default
             #line hidden
             this.Write(")\r\n\t\t\t\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\t\t\t\tm_");
             
-            #line 182 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 184 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
             
             #line default
             #line hidden
             this.Write(" = value;\r\n\t\t\t\t\t\t\t\t\t\tOnPropertyChanged(\"");
             
-            #line 183 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 185 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
             
             #line default
             #line hidden
             this.Write("\");\r\n\t\t\t\t\t\t\t\t\t}\r\n\t\t\t\t\t\t\t\t }\r\n\t\t\t\t\t\t\t  }\r\n\t\t\t\t\t\t\t");
             
-            #line 187 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 189 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
 
 					  }
 					  else
@@ -506,49 +507,49 @@ namespace AutomaticCode
             #line hidden
             this.Write(" \r\n\t\t\t\t\t\t\tprivate decimal m_");
             
-            #line 192 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 194 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
             
             #line default
             #line hidden
             this.Write(";\r\n\t\t\t\t\t\t\tpublic decimal ");
             
-            #line 193 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 195 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
             
             #line default
             #line hidden
             this.Write("\r\n\t\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\t\tget { return m_");
             
-            #line 195 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 197 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
             
             #line default
             #line hidden
             this.Write("; }\r\n\t\t\t\t\t\t\t\tset\r\n\t\t\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\t\t\tif (value != m_");
             
-            #line 198 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 200 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
             
             #line default
             #line hidden
             this.Write(")\r\n\t\t\t\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\t\t\t\tm_");
             
-            #line 200 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 202 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
             
             #line default
             #line hidden
             this.Write(" = value;\r\n\t\t\t\t\t\t\t\t\t\tOnPropertyChanged(\"");
             
-            #line 201 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 203 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
             
             #line default
             #line hidden
             this.Write("\");\r\n\t\t\t\t\t\t\t\t\t}\r\n\t\t\t\t\t\t\t\t\t}\r\n\t\t\t\t\t\t\t\t}\r\n\t\t\t\t\t\t\t");
             
-            #line 205 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 207 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
 
 					  }
 				   }
@@ -562,49 +563,49 @@ namespace AutomaticCode
             #line hidden
             this.Write(" \r\n\t\t\t\t\t\t\tprivate Guid? m_");
             
-            #line 213 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 215 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
             
             #line default
             #line hidden
             this.Write(";\r\n\t\t\t\t\t\t\tpublic Guid? ");
             
-            #line 214 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 216 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
             
             #line default
             #line hidden
             this.Write("\r\n\t\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\t\tget { return m_");
             
-            #line 216 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 218 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
             
             #line default
             #line hidden
             this.Write("; }\r\n\t\t\t\t\t\t\t\tset\r\n\t\t\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\t\t\tif (value != m_");
             
-            #line 219 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 221 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
             
             #line default
             #line hidden
             this.Write(")\r\n\t\t\t\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\t\t\t\tm_");
             
-            #line 221 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 223 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
             
             #line default
             #line hidden
             this.Write(" = value;\r\n\t\t\t\t\t\t\t\t\t\tOnPropertyChanged(\"");
             
-            #line 222 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 224 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
             
             #line default
             #line hidden
             this.Write("\");\r\n\t\t\t\t\t\t\t\t\t}\r\n\t\t\t\t\t\t\t\t }\r\n\t\t\t\t\t\t\t  }\r\n\t\t\t\t\t\t\t");
             
-            #line 226 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 228 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
 
 					  }
 					  else
@@ -615,49 +616,49 @@ namespace AutomaticCode
             #line hidden
             this.Write(" \r\n\t\t\t\t\t\t\tprivate Guid m_");
             
-            #line 231 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 233 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
             
             #line default
             #line hidden
             this.Write(";\r\n\t\t\t\t\t\t\tpublic Guid ");
             
-            #line 232 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 234 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
             
             #line default
             #line hidden
             this.Write("\r\n\t\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\t\tget { return m_");
             
-            #line 234 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 236 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
             
             #line default
             #line hidden
             this.Write("; }\r\n\t\t\t\t\t\t\t\tset\r\n\t\t\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\t\t\tif (value != m_");
             
-            #line 237 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 239 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
             
             #line default
             #line hidden
             this.Write(")\r\n\t\t\t\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\t\t\t\tm_");
             
-            #line 239 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 241 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
             
             #line default
             #line hidden
             this.Write(" = value;\r\n\t\t\t\t\t\t\t\t\t\tOnPropertyChanged(\"");
             
-            #line 240 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 242 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
             
             #line default
             #line hidden
             this.Write("\");\r\n\t\t\t\t\t\t\t\t\t}\r\n\t\t\t\t\t\t\t\t }\r\n\t\t\t\t\t\t\t  }\r\n\t\t\t\t\t\t\t");
             
-            #line 244 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 246 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
 
 					  }
 				   }
@@ -667,7 +668,8 @@ namespace AutomaticCode
             
             #line default
             #line hidden
-            this.Write(@"		   #endregion
+            this.Write(@"		  
+		   #endregion
 
 		   #region Method
         /// <summary>
@@ -679,14 +681,14 @@ namespace AutomaticCode
 		    StringBuilder sb = new StringBuilder();
 			sb.Append(""INSERT INTO ");
             
-            #line 260 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 263 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(DataName));
             
             #line default
             #line hidden
             this.Write("(\");\r\n\t\t    ");
             
-            #line 261 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 264 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
 
 			    int num=ColumnList.Count;
 				int i=0;
@@ -701,14 +703,14 @@ namespace AutomaticCode
             #line hidden
             this.Write("\t\t\t\t\t   sb.Append(\"");
             
-            #line 270 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 273 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
             
             #line default
             #line hidden
             this.Write("\");\r\n\t\t\t\t\t   \r\n\t\t\t\t\t   ");
             
-            #line 272 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 275 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
 
 					}
 					else
@@ -719,14 +721,14 @@ namespace AutomaticCode
             #line hidden
             this.Write("\t\t\t\t\t\tsb.Append(\"");
             
-            #line 277 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 280 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(item.Name+","));
             
             #line default
             #line hidden
             this.Write("\");\r\n\t\t\t\t\t   ");
             
-            #line 278 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 281 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
 
 					}
 				}
@@ -736,7 +738,7 @@ namespace AutomaticCode
             #line hidden
             this.Write("sb.Append(\") VALUES (\");");
             
-            #line 281 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 284 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
 
 			    int j=0;
 			    foreach(var item in ColumnList)
@@ -758,21 +760,21 @@ namespace AutomaticCode
             #line hidden
             this.Write("\t\t\t\t\t\t      sb.Append(");
             
-            #line 297 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 300 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
             
             #line default
             #line hidden
             this.Write("==\"\" ? \"\" : \"\'\" + ");
             
-            #line 297 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 300 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
             
             #line default
             #line hidden
             this.Write(" + \"\'\"); \r\n\t\t\t\t\t        ");
             
-            #line 298 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 301 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
   
 						 }
 					     
@@ -781,21 +783,21 @@ namespace AutomaticCode
             #line hidden
             this.Write("\t\t\t\t\t\t   sb.Append(");
             
-            #line 301 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 304 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
             
             #line default
             #line hidden
             this.Write("==\"\" ? \"NULL\" : \"\'\" + ");
             
-            #line 301 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 304 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
             
             #line default
             #line hidden
             this.Write(" + \"\'\"); \r\n\t\t\t\t\t     ");
             
-            #line 302 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 305 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
 
 					   }
 					   else
@@ -806,21 +808,21 @@ namespace AutomaticCode
             #line hidden
             this.Write("\t\t\t\t\t\t     sb.Append(");
             
-            #line 307 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 310 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
             
             #line default
             #line hidden
             this.Write("==null ? \"NULL\" : \"\'\" + ");
             
-            #line 307 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 310 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
             
             #line default
             #line hidden
             this.Write(" + \"\'\"); \r\n\t\t\t\t\t       ");
             
-            #line 308 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 311 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
 
 					   }
 					}
@@ -840,21 +842,21 @@ namespace AutomaticCode
             #line hidden
             this.Write("\t\t\t\t\t\t      sb.Append(");
             
-            #line 322 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 325 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
             
             #line default
             #line hidden
             this.Write("==\"\" ? \"\'\'\" : \"\'\" + ");
             
-            #line 322 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 325 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
             
             #line default
             #line hidden
             this.Write(" + \"\'\"); \r\n\t\t\t\t\t\t\t  sb.Append(\",\");\r\n\t\t\t\t\t        ");
             
-            #line 324 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 327 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
   
 						 }
 					     
@@ -863,21 +865,21 @@ namespace AutomaticCode
             #line hidden
             this.Write("\t\t\t\t\t\t   sb.Append(");
             
-            #line 327 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 330 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
             
             #line default
             #line hidden
             this.Write("==\"\" ? \"NULL\" : \"\'\" + ");
             
-            #line 327 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 330 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
             
             #line default
             #line hidden
             this.Write(" + \"\'\"); \r\n\t\t\t\t\t\t   sb.Append(\",\");\r\n\t\t\t\t\t     ");
             
-            #line 329 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 332 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
 
 					   }
 					   else
@@ -888,21 +890,21 @@ namespace AutomaticCode
             #line hidden
             this.Write("\t\t\t\t\t\t     sb.Append(");
             
-            #line 334 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 337 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
             
             #line default
             #line hidden
             this.Write("==null ? \"NULL\" : \"\'\" + ");
             
-            #line 334 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 337 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
             
             #line default
             #line hidden
             this.Write(" + \"\'\" ); \r\n\t\t\t\t\t\t\t sb.Append(\",\");\r\n\t\t\t\t\t       ");
             
-            #line 336 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 339 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
 
 					   }
 					}
@@ -926,14 +928,14 @@ namespace AutomaticCode
 		    StringBuilder sb = new StringBuilder();
             sb.Append(""UPDATE [dbo].[");
             
-            #line 354 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 357 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(DataName));
             
             #line default
             #line hidden
             this.Write("] SET \");\r\n\t\t\t");
             
-            #line 355 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 358 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
 
 				       int s=0;
 					   foreach(var item in ColumnList)
@@ -957,28 +959,28 @@ namespace AutomaticCode
             #line hidden
             this.Write("\t\t\t\t\t\t\t\t          sb.Append(\"");
             
-            #line 373 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 376 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
             
             #line default
             #line hidden
             this.Write("=\");\r\n                                          sb.Append(");
             
-            #line 374 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 377 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
             
             #line default
             #line hidden
             this.Write(" == \"\" ? \"\'\'\" : \"\'\" + ");
             
-            #line 374 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 377 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
             
             #line default
             #line hidden
             this.Write(" + \"\'\");\r\n\t\t\t\t\t\t\t\t          ");
             
-            #line 375 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 378 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
 
 									    }
 										else
@@ -989,28 +991,28 @@ namespace AutomaticCode
             #line hidden
             this.Write("\t\t\t\t\t\t\t\t             sb.Append(\"");
             
-            #line 380 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 383 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
             
             #line default
             #line hidden
             this.Write("=\");\r\n                                             sb.Append(");
             
-            #line 381 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 384 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
             
             #line default
             #line hidden
             this.Write(" == \"\" ? \"NULL\" : \"\'\" + ");
             
-            #line 381 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 384 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
             
             #line default
             #line hidden
             this.Write(" + \"\'\");\r\n\t\t\t\t\t\t\t\t           ");
             
-            #line 382 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 385 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
 
 										}
 								           
@@ -1023,28 +1025,28 @@ namespace AutomaticCode
             #line hidden
             this.Write("\t\t\t\t\t\t\t\t             sb.Append(\"");
             
-            #line 389 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 392 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
             
             #line default
             #line hidden
             this.Write("=\");\r\n                                             sb.Append(");
             
-            #line 390 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 393 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
             
             #line default
             #line hidden
             this.Write(" == null ? \"NULL\" : \"\'\" + ");
             
-            #line 390 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 393 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
             
             #line default
             #line hidden
             this.Write(" + \"\'\");\r\n\t\t\t\t\t\t\t\t           ");
             
-            #line 391 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 394 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
 
 									}
 							  }
@@ -1064,21 +1066,21 @@ namespace AutomaticCode
             #line hidden
             this.Write("\t\t\t\t\t\t\t\t          sb.Append(\"");
             
-            #line 405 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 408 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
             
             #line default
             #line hidden
             this.Write("=\");\r\n                                          sb.Append(");
             
-            #line 406 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 409 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
             
             #line default
             #line hidden
             this.Write(" == \"\" ? \"\'\'\" : \"\'\" + ");
             
-            #line 406 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 409 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
             
             #line default
@@ -1086,7 +1088,7 @@ namespace AutomaticCode
             this.Write(" + \"\'\");\r\n                                          sb.Append(\",\");\r\n\t\t\t\t\t\t\t\t    " +
                     "      ");
             
-            #line 408 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 411 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
 
 									    }
 										else
@@ -1097,21 +1099,21 @@ namespace AutomaticCode
             #line hidden
             this.Write("\t\t\t\t\t\t\t\t             sb.Append(\"");
             
-            #line 413 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 416 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
             
             #line default
             #line hidden
             this.Write("=\");\r\n                                             sb.Append(");
             
-            #line 414 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 417 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
             
             #line default
             #line hidden
             this.Write(" == \"\" ? \"NULL\" : \"\'\" + ");
             
-            #line 414 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 417 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
             
             #line default
@@ -1119,7 +1121,7 @@ namespace AutomaticCode
             this.Write(" + \"\'\");\r\n                                             sb.Append(\",\");\r\n\t\t\t\t\t\t\t\t " +
                     "          ");
             
-            #line 416 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 419 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
 
 										}
 								           
@@ -1132,21 +1134,21 @@ namespace AutomaticCode
             #line hidden
             this.Write("\t\t\t\t\t\t\t\t             sb.Append(\"");
             
-            #line 423 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 426 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
             
             #line default
             #line hidden
             this.Write("=\");\r\n                                             sb.Append(");
             
-            #line 424 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 427 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
             
             #line default
             #line hidden
             this.Write(" == null ? \"NULL\" : \"\'\" + ");
             
-            #line 424 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 427 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
             
             #line default
@@ -1154,7 +1156,7 @@ namespace AutomaticCode
             this.Write(" + \"\'\");\r\n                                             sb.Append(\",\");\r\n\t\t\t\t\t\t\t\t " +
                     "          ");
             
-            #line 426 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 429 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
 
 									}
 							  }
@@ -1166,7 +1168,7 @@ namespace AutomaticCode
             #line hidden
             this.Write("\t\t\t\t  sb.Append(\" WHERE \");\r\n\t\t\t\t   ");
             
-            #line 433 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 436 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
 
 				      var pklist = ColumnList.Where(p => p.IsPK).ToList();
 					  int count = pklist.Count;
@@ -1183,21 +1185,21 @@ namespace AutomaticCode
             #line hidden
             this.Write("\t\t\t\t\t\t\t\t     sb.Append($\"");
             
-            #line 444 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 447 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pk.Name));
             
             #line default
             #line hidden
             this.Write("=\'{");
             
-            #line 444 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 447 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pk.Name));
             
             #line default
             #line hidden
             this.Write("}\' \");\r\n\t\t\t\t\t\t\t\t   ");
             
-            #line 445 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 448 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
 
 							}
 							else
@@ -1208,21 +1210,21 @@ namespace AutomaticCode
             #line hidden
             this.Write("\t\t\t\t\t\t\t\t   sb.Append($\"");
             
-            #line 450 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 453 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pk.Name));
             
             #line default
             #line hidden
             this.Write("=\'{");
             
-            #line 450 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 453 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pk.Name));
             
             #line default
             #line hidden
             this.Write("}\'\" + \" and \");\r\n\t\t\t\t\t\t\t\t");
             
-            #line 451 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 454 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
 
 							}
 					    }
@@ -1244,14 +1246,14 @@ namespace AutomaticCode
 		    StringBuilder sb = new StringBuilder();
 			sb.Append(""delete [dbo].[");
             
-            #line 467 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 470 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(DataName));
             
             #line default
             #line hidden
             this.Write("] where \");\r\n\t\t\t    ");
             
-            #line 468 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 471 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
 
 				      
 					  int ks = 0;
@@ -1266,21 +1268,21 @@ namespace AutomaticCode
             #line hidden
             this.Write("\t\t\t\t\t\t\t\t    sb.Append($\"");
             
-            #line 477 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 480 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pk.Name));
             
             #line default
             #line hidden
             this.Write("=\'{");
             
-            #line 477 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 480 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pk.Name));
             
             #line default
             #line hidden
             this.Write("}\' \");\r\n\t\t\t\t\t\t\t\t");
             
-            #line 478 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 481 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
 
 							}
 							else
@@ -1291,21 +1293,21 @@ namespace AutomaticCode
             #line hidden
             this.Write("\t\t\t\t\t\t\t\t   sb.Append($\"");
             
-            #line 483 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 486 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pk.Name));
             
             #line default
             #line hidden
             this.Write("=\'{");
             
-            #line 483 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 486 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pk.Name));
             
             #line default
             #line hidden
             this.Write("}\'\" + \" and \");\r\n\t\t\t\t\t\t\t\t");
             
-            #line 484 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 487 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
 
 							}
 					    }
@@ -1325,21 +1327,21 @@ namespace AutomaticCode
         /// <returns></returns>
         public ObservableCollection<");
             
-            #line 498 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 501 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(ClassName));
             
             #line default
             #line hidden
             this.Write("> SelectEntitys(string sql)\r\n        {\r\n\t\t     ObservableCollection<");
             
-            #line 500 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 503 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(ClassName));
             
             #line default
             #line hidden
             this.Write("> entityList=new ObservableCollection<");
             
-            #line 500 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 503 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(ClassName));
             
             #line default
@@ -1347,21 +1349,21 @@ namespace AutomaticCode
             this.Write(">();\r\n\t\t     DataTable dt=DB.ExecuteSelect(sql).Tables[0]; \r\n\t\t\t for(int i=0;i<dt" +
                     ".Rows.Count;i++)\r\n\t\t\t {\r\n\t\t\t     ");
             
-            #line 504 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 507 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(ClassName));
             
             #line default
             #line hidden
             this.Write(" entityModel=new ");
             
-            #line 504 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 507 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(ClassName));
             
             #line default
             #line hidden
             this.Write("();\r\n\t\t\t\t ");
             
-            #line 505 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 508 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
 
 				  foreach(var item in ColumnList)
 				  {
@@ -1371,35 +1373,65 @@ namespace AutomaticCode
 							item.DataType=="char"
 							)
 						{
-						    
+						   
+						    if(item.Nullable=="no")
+							{
+							     
             
             #line default
             #line hidden
             this.Write("\t\t\t\t\t\t    entityModel.");
             
-            #line 515 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 521 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
             
             #line default
             #line hidden
             this.Write("=dt.Rows[i][\"");
             
-            #line 515 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
-            
-            #line default
-            #line hidden
-            this.Write("\"]==DBNull.Value?\"\":dt.Rows[i][\"");
-            
-            #line 515 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 521 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
             
             #line default
             #line hidden
             this.Write("\"].ToString();\r\n\t\t\t\t\t\t\t");
             
-            #line 516 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 522 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
 
+							}
+							else
+							{
+							   
+            
+            #line default
+            #line hidden
+            this.Write("\t\t\t\t\t\t    entityModel.");
+            
+            #line 527 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
+            
+            #line default
+            #line hidden
+            this.Write("=dt.Rows[i][\"");
+            
+            #line 527 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
+            
+            #line default
+            #line hidden
+            this.Write("\"]==DBNull.Value?\"\":dt.Rows[i][\"");
+            
+            #line 527 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
+            
+            #line default
+            #line hidden
+            this.Write("\"].ToString();\r\n\t\t\t\t\t\t\t");
+            
+            #line 528 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+
+							}
+						   
 						}
 						if(item.DataType=="date" || 
 							item.DataType=="time" || 
@@ -1407,165 +1439,306 @@ namespace AutomaticCode
 							item.DataType=="datetime"
 							)
 						{
+						    if(item.Nullable=="no")
+							{
 						    
             
             #line default
             #line hidden
             this.Write("\t\t\t\t\t\t    entityModel.");
             
-            #line 525 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 541 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
+            
+            #line default
+            #line hidden
+            this.Write("=Convert.ToDateTime(dt.Rows[i][\"");
+            
+            #line 541 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
+            
+            #line default
+            #line hidden
+            this.Write("\"]);\r\n\t\t\t\t\t\t\t");
+            
+            #line 542 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+
+							}
+							else
+							{
+							 
+            
+            #line default
+            #line hidden
+            this.Write("\t\t\t\t\t\t    entityModel.");
+            
+            #line 547 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
             
             #line default
             #line hidden
             this.Write("=dt.Rows[i][\"");
             
-            #line 525 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 547 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
             
             #line default
             #line hidden
             this.Write("\"]==DBNull.Value?(DateTime?)null:Convert.ToDateTime(dt.Rows[i][\"");
             
-            #line 525 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 547 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
             
             #line default
             #line hidden
             this.Write("\"]);\r\n\t\t\t\t\t\t\t");
             
-            #line 526 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 548 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
 
+							}
 						}
 						if(item.DataType=="int")
 			            {
-						     
+						    if(item.Nullable=="no")
+							{
+							 
             
             #line default
             #line hidden
             this.Write("\t\t\t\t\t\t    entityModel.");
             
-            #line 531 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 556 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
+            
+            #line default
+            #line hidden
+            this.Write("=Convert.ToInt32(dt.Rows[i][\"");
+            
+            #line 556 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
+            
+            #line default
+            #line hidden
+            this.Write("\"]);\r\n\t\t\t\t\t\t\t");
+            
+            #line 557 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+
+							}
+							else
+							{
+							 
+            
+            #line default
+            #line hidden
+            this.Write("\t\t\t\t\t\t    entityModel.");
+            
+            #line 562 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
             
             #line default
             #line hidden
             this.Write("=dt.Rows[i][\"");
             
-            #line 531 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 562 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
             
             #line default
             #line hidden
             this.Write("\"]==DBNull.Value?(int?)null:Convert.ToInt32(dt.Rows[i][\"");
             
-            #line 531 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 562 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
             
             #line default
             #line hidden
             this.Write("\"]);\r\n\t\t\t\t\t\t\t");
             
-            #line 532 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 563 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
 
+							}
+						    
 						}
 						 if(item.DataType=="bit")
 						 {
-						      
+						    if(item.Nullable=="no")
+							{
+							
             
             #line default
             #line hidden
             this.Write("\t\t\t\t\t\t    entityModel.");
             
-            #line 537 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 572 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
+            
+            #line default
+            #line hidden
+            this.Write("=Convert.ToBoolean(dt.Rows[i][\"");
+            
+            #line 572 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
+            
+            #line default
+            #line hidden
+            this.Write("\"]);\r\n\t\t\t\t\t\t\t");
+            
+            #line 573 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+
+							}
+							else
+							{
+							
+            
+            #line default
+            #line hidden
+            this.Write("\t\t\t\t\t\t    entityModel.");
+            
+            #line 578 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
             
             #line default
             #line hidden
             this.Write("=dt.Rows[i][\"");
             
-            #line 537 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 578 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
             
             #line default
             #line hidden
             this.Write("\"]==DBNull.Value?(bool?)null:Convert.ToBoolean(dt.Rows[i][\"");
             
-            #line 537 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 578 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
             
             #line default
             #line hidden
             this.Write("\"]);\r\n\t\t\t\t\t\t\t");
             
-            #line 538 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 579 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
 
+							}
 						 }
 						 if(item.DataType=="decimal" 
 							|| item.DataType=="numeric"
 							)
 						 {
-						     
+						   if(item.Nullable=="no")
+						   {
+						   
             
             #line default
             #line hidden
             this.Write("\t\t\t\t\t\t    entityModel.");
             
-            #line 545 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 589 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
             
             #line default
             #line hidden
-            this.Write("=dt.Rows[i][\"");
+            this.Write("=Convert.ToDecimal(dt.Rows[i][\"");
             
-            #line 545 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
-            
-            #line default
-            #line hidden
-            this.Write("\"]==DBNull.Value?(decimal?)null:Convert.ToDecimal(dt.Rows[i][\"");
-            
-            #line 545 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 589 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
             
             #line default
             #line hidden
             this.Write("\"]);\r\n\t\t\t\t\t\t\t");
             
-            #line 546 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 590 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
 
-						 }
-						 if(item.DataType=="uniqueidentifier")
-						{
+						   }
+						   else
+						   {
 						    
             
             #line default
             #line hidden
             this.Write("\t\t\t\t\t\t    entityModel.");
             
-            #line 551 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 595 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
             
             #line default
             #line hidden
             this.Write("=dt.Rows[i][\"");
             
-            #line 551 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 595 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
             
             #line default
             #line hidden
-            this.Write("\"]==DBNull.Value?(Guid?)null:Guid.Parse(dt.Rows[i][\"");
+            this.Write("\"]==DBNull.Value?(decimal?)null:Convert.ToDecimal(dt.Rows[i][\"");
             
-            #line 551 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 595 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
+            
+            #line default
+            #line hidden
+            this.Write("\"]);\r\n\t\t\t\t\t\t\t");
+            
+            #line 596 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+
+						   }
+						 }
+						 if(item.DataType=="uniqueidentifier")
+						{
+						     if(item.Nullable=="no")
+						   {
+						    
+            
+            #line default
+            #line hidden
+            this.Write("\t\t\t\t\t\t    entityModel.");
+            
+            #line 604 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
+            
+            #line default
+            #line hidden
+            this.Write("=Guid.Parse(dt.Rows[i][\"");
+            
+            #line 604 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
             
             #line default
             #line hidden
             this.Write("\"].ToString());\r\n\t\t\t\t\t\t\t");
             
-            #line 552 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 605 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
 
+							}
+							else
+							{
+							  
+            
+            #line default
+            #line hidden
+            this.Write("\t\t\t\t\t\t    entityModel.");
+            
+            #line 610 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
+            
+            #line default
+            #line hidden
+            this.Write("=dt.Rows[i][\"");
+            
+            #line 610 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
+            
+            #line default
+            #line hidden
+            this.Write("\"]==DBNull.Value?(Guid?)null:Guid.Parse(dt.Rows[i][\"");
+            
+            #line 610 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
+            
+            #line default
+            #line hidden
+            this.Write("\"].ToString());\r\n\t\t\t\t\t\t\t");
+            
+            #line 611 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+
+							}
 						}
 				  }
 				 
@@ -1576,21 +1749,21 @@ namespace AutomaticCode
                     "  }\r\n\r\n\t\t/// <summary>\r\n        /// 查询\r\n        /// </summary>\r\n        /// <par" +
                     "am name=\"sql\"></param>\r\n        /// <returns></returns>\r\n        public ");
             
-            #line 566 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 626 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(ClassName));
             
             #line default
             #line hidden
             this.Write(" SelectEntity(string sql)\r\n        {\r\n\t\t    ");
             
-            #line 568 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 628 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(ClassName));
             
             #line default
             #line hidden
             this.Write(" entityModel = new ");
             
-            #line 568 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 628 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(ClassName));
             
             #line default
@@ -1598,7 +1771,7 @@ namespace AutomaticCode
             this.Write("();\r\n            SqlDataReader dataRead=DB.ExecuteReader(sql);\r\n            if (d" +
                     "ataRead.Read())\r\n            {\r\n\t\t\t     ");
             
-            #line 572 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 632 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
 
 				  foreach(var item in ColumnList)
 				  {
@@ -1608,35 +1781,64 @@ namespace AutomaticCode
 							item.DataType=="char"
 							)
 						{
-						    
+						    if(item.Nullable=="no")
+							{
+							
             
             #line default
             #line hidden
             this.Write("\t\t\t\t\t\t    entityModel.");
             
-            #line 582 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 644 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
             
             #line default
             #line hidden
             this.Write("=dataRead[\"");
             
-            #line 582 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
-            
-            #line default
-            #line hidden
-            this.Write("\"]==DBNull.Value?\"\":dataRead[\"");
-            
-            #line 582 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 644 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
             
             #line default
             #line hidden
             this.Write("\"].ToString();\r\n\t\t\t\t\t\t\t");
             
-            #line 583 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 645 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
 
+							}
+							else
+							{
+							 
+            
+            #line default
+            #line hidden
+            this.Write("\t\t\t\t\t\t    entityModel.");
+            
+            #line 650 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
+            
+            #line default
+            #line hidden
+            this.Write("=dataRead[\"");
+            
+            #line 650 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
+            
+            #line default
+            #line hidden
+            this.Write("\"]==DBNull.Value?\"\":dataRead[\"");
+            
+            #line 650 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
+            
+            #line default
+            #line hidden
+            this.Write("\"].ToString();\r\n\t\t\t\t\t\t\t");
+            
+            #line 651 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+
+							}
+						    
 						}
 						if(item.DataType=="date" || 
 							item.DataType=="time" || 
@@ -1644,165 +1846,306 @@ namespace AutomaticCode
 							item.DataType=="datetime"
 							)
 						{
+						   if(item.Nullable=="no")
+							{
 						    
             
             #line default
             #line hidden
             this.Write("\t\t\t\t\t\t    entityModel.");
             
-            #line 592 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 664 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
             
             #line default
             #line hidden
             this.Write("=dataRead[\"");
             
-            #line 592 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 664 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
             
             #line default
             #line hidden
             this.Write("\"]==DBNull.Value?(DateTime?)null:Convert.ToDateTime(dataRead[\"");
             
-            #line 592 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 664 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
             
             #line default
             #line hidden
             this.Write("\"]);\r\n\t\t\t\t\t\t\t");
             
-            #line 593 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 665 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
 
+							}
+							else
+							{
+							 
+            
+            #line default
+            #line hidden
+            this.Write("\t\t\t\t\t\t    entityModel.");
+            
+            #line 670 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
+            
+            #line default
+            #line hidden
+            this.Write("=Convert.ToDateTime(dataRead[\"");
+            
+            #line 670 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
+            
+            #line default
+            #line hidden
+            this.Write("\"]);\r\n\t\t\t\t\t\t\t");
+            
+            #line 671 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+
+							}
 						}
 						if(item.DataType=="int")
 			            {
+						   if(item.Nullable=="no")
+							{
 						     
             
             #line default
             #line hidden
             this.Write("\t\t\t\t\t\t    entityModel.");
             
-            #line 598 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 679 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
+            
+            #line default
+            #line hidden
+            this.Write("=Convert.ToInt32(dataRead[\"");
+            
+            #line 679 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
+            
+            #line default
+            #line hidden
+            this.Write("\"]);\r\n\t\t\t\t\t\t\t");
+            
+            #line 680 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+
+							}
+							else
+							{
+							 
+            
+            #line default
+            #line hidden
+            this.Write("\t\t\t\t\t\t    entityModel.");
+            
+            #line 685 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
             
             #line default
             #line hidden
             this.Write("=dataRead[\"");
             
-            #line 598 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 685 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
             
             #line default
             #line hidden
             this.Write("\"]==DBNull.Value?(int?)null:Convert.ToInt32(dataRead[\"");
             
-            #line 598 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 685 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
             
             #line default
             #line hidden
             this.Write("\"]);\r\n\t\t\t\t\t\t\t");
             
-            #line 599 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 686 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
 
+							}
 						}
 						 if(item.DataType=="bit")
 						 {
+						     if(item.Nullable=="no")
+							{
 						      
             
             #line default
             #line hidden
             this.Write("\t\t\t\t\t\t    entityModel.");
             
-            #line 604 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 694 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
+            
+            #line default
+            #line hidden
+            this.Write("=Convert.ToBoolean(dataRead[\"");
+            
+            #line 694 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
+            
+            #line default
+            #line hidden
+            this.Write("\"]);\r\n\t\t\t\t\t\t\t");
+            
+            #line 695 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+
+							}
+							else
+							{
+							   
+            
+            #line default
+            #line hidden
+            this.Write("\t\t\t\t\t\t    entityModel.");
+            
+            #line 700 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
             
             #line default
             #line hidden
             this.Write("=dataRead[\"");
             
-            #line 604 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 700 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
             
             #line default
             #line hidden
             this.Write("\"]==DBNull.Value?(bool?)null:Convert.ToBoolean(dataRead[\"");
             
-            #line 604 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 700 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
             
             #line default
             #line hidden
             this.Write("\"]);\r\n\t\t\t\t\t\t\t");
             
-            #line 605 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 701 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
 
+							}
 						 }
 						 if(item.DataType=="decimal" 
 							|| item.DataType=="numeric"
 							)
 						 {
+
+						  if(item.Nullable=="no")
+							{
 						     
             
             #line default
             #line hidden
             this.Write("\t\t\t\t\t\t    entityModel.");
             
-            #line 612 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 712 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
             
             #line default
             #line hidden
-            this.Write("=dataRead[\"");
+            this.Write("=Convert.ToDecimal(dataRead[\"");
             
-            #line 612 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
-            
-            #line default
-            #line hidden
-            this.Write("\"]==DBNull.Value?(decimal?)null:Convert.ToDecimal(dataRead[\"");
-            
-            #line 612 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 712 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
             
             #line default
             #line hidden
             this.Write("\"]);\r\n\t\t\t\t\t\t\t");
             
-            #line 613 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 713 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
 
-						 }
-						 if(item.DataType=="uniqueidentifier")
-						{
-						    
+							}
+							else
+							{
+							 
             
             #line default
             #line hidden
             this.Write("\t\t\t\t\t\t    entityModel.");
             
-            #line 618 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 718 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
             
             #line default
             #line hidden
             this.Write("=dataRead[\"");
             
-            #line 618 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 718 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
+            
+            #line default
+            #line hidden
+            this.Write("\"]==DBNull.Value?(decimal?)null:Convert.ToDecimal(dataRead[\"");
+            
+            #line 718 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
+            
+            #line default
+            #line hidden
+            this.Write("\"]);\r\n\t\t\t\t\t\t\t");
+            
+            #line 719 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+
+							}
+						 }
+						 if(item.DataType=="uniqueidentifier")
+						{
+						   if(item.Nullable=="no")
+							{
+						    
+            
+            #line default
+            #line hidden
+            this.Write("\t\t\t\t\t\t    entityModel.");
+            
+            #line 727 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
+            
+            #line default
+            #line hidden
+            this.Write("=dataRead[\"");
+            
+            #line 727 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
             
             #line default
             #line hidden
             this.Write("\"]==DBNull.Value?(Guid?)null:Guid.Parse(dataRead[\"");
             
-            #line 618 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 727 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
             
             #line default
             #line hidden
             this.Write("\"].ToString());\r\n\t\t\t\t\t\t\t");
             
-            #line 619 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            #line 728 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
 
+							}
+							else
+							{
+							 
+            
+            #line default
+            #line hidden
+            this.Write("\t\t\t\t\t\t    entityModel.");
+            
+            #line 733 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
+            
+            #line default
+            #line hidden
+            this.Write("=Guid.Parse(dataRead[\"");
+            
+            #line 733 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(item.Name));
+            
+            #line default
+            #line hidden
+            this.Write("\"].ToString());\r\n\t\t\t\t\t\t\t");
+            
+            #line 734 "E:\代码生成器\AutomaticCode\AutomaticCode\DataModel.tt"
+
+							}
 						}
 				  }
 				 

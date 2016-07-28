@@ -1,0 +1,145 @@
+﻿<#@ template language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ output extension=".cs" #>
+using CHControl.ChwareStudio.MetaModel;
+using System;
+using System.Collections.ObjectModel;
+using System.ComponentModel;
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Media.Imaging;
+
+namespace CHControl.<#= dataM.ClassName #>Manage
+{
+    /// <summary>
+    /// <#= dataM.ClassName #>ManageWindow.xaml 的交互逻辑
+    /// </summary>
+    public partial class <#= dataM.ClassName #>ManageWindow : ClosableUserControl, IUserRightModule, INotifyPropertyChanged
+    {
+	    #region INotifyPropertyChanged 属性变化时通知
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        protected void NotifyPropertyChanged(String info)
+        {
+            if (PropertyChanged != null)
+            {
+                PropertyChanged(this, new PropertyChangedEventArgs(info));
+            }
+        }
+        protected void NotifyPropertyChanged<T>(System.Linq.Expressions.Expression<Func<T>> propertyExpression)
+        {
+            try
+            {
+                System.Linq.Expressions.MemberExpression memberExpression = propertyExpression.Body as System.Linq.Expressions.MemberExpression;
+                this.NotifyPropertyChanged(memberExpression.Member.Name);
+            }
+            catch
+            {
+                throw new System.ArgumentNullException("propertyExpression");
+            }
+        }
+        #endregion
+
+        private ObservableCollection<<#= dataM.ClassName#>> m_<#= dataM.ClassName#>List;
+        /// <summary>
+        /// 列表
+        /// </summary>
+        public ObservableCollection<<#= dataM.ClassName#>> <#= dataM.ClassName#>List
+        {
+            get { return m_<#= dataM.ClassName#>List; }
+            set
+            {
+                m_<#= dataM.ClassName#>List = value;
+                NotifyPropertyChanged("<#= dataM.ClassName#>List");
+            }
+        }
+        private <#= dataM.ClassName#> m_<#= dataM.ClassName#>Model;
+        /// <summary>
+        /// 实体
+        /// </summary>
+        public <#= dataM.ClassName#> <#= dataM.ClassName#>Model
+        {
+            get { return m_<#= dataM.ClassName#>Model; }
+            set
+            {
+                m_<#= dataM.ClassName#>Model = value;
+                NotifyPropertyChanged("<#= dataM.ClassName#>Model");
+            }
+        }
+
+		public <#= dataM.ClassName #>ManageWindow()
+        {
+            InitializeComponent();
+            this.SetValue(Window.TitleProperty, "<#= dataM.ClassName#>管理");
+            var bi = new BitmapImage(new Uri(@"/Md_<#= dataM.ClassName#>ManageModule;component/Resources/icon.png", UriKind.RelativeOrAbsolute));
+            this.SetValue(Window.IconProperty, bi);
+			<#= dataM.ClassName#>Model = new <#= dataM.ClassName#>();
+			<#= dataM.ClassName#>List=<#= dataM.ClassName#>Model.SelectEntitys("select * from [dbo].[<#= dataM.DataName#>]");
+        }
+
+		private void btnQuery_Click(object sender, RoutedEventArgs e)
+        {
+            string startTime = txtStartDate.Text;
+            string endTime = txtEndDate.Text;
+            
+        }
+		private void btnClick_insert(object sender, RoutedEventArgs e)
+        {
+            <#= dataM.ClassName#>Model = new <#= dataM.ClassName#>();
+			<#= dataM.ClassName#>Model.EntityStatu = "insert";
+            
+        }
+		private void btnClick_delete(object sender, RoutedEventArgs e)
+        {
+            if (<#= dataM.ClassName#>Model != null)
+            {
+                bool result = <#= dataM.ClassName#>Model.DeleteEntity();
+                if (result)
+                {
+                    <#= dataM.ClassName#>List.Remove(<#= dataM.ClassName#>Model);
+                    MessageBox.Show("删除成功！");
+                }
+                else
+                {
+                    MessageBox.Show("删除失败！");
+                }
+            }
+            
+        }
+		private void btnClick_save(object sender, RoutedEventArgs e)
+        {
+            if (<#= dataM.ClassName#>Model != null)
+            {
+                bool result = false;
+                if (<#= dataM.ClassName#>Model.EntityStatu == "insert")
+                {
+                    result = <#= dataM.ClassName#>Model.InsertEntity();
+                    <#= dataM.ClassName#>List.Add(<#= dataM.ClassName#>Model);
+                }
+                else
+                {
+                    result = <#= dataM.ClassName#>Model.UpdateEntity();
+                }
+                if (result)
+                {
+                    MessageBox.Show("保存成功!");
+                }
+                else
+                {
+                    MessageBox.Show("保存失败!");
+                }
+            }
+        }
+		private void DataGrid_SelectionChanged_1(object sender, SelectionChangedEventArgs e)
+        {
+		    if(<#= dataM.ClassName#>Model!=null)
+			{
+			   <#= dataM.ClassName#>Model.EntityStatu = "update";
+			}
+        }
+
+	}
+}

@@ -14,6 +14,8 @@ namespace CHControl.<#= ClassName #>Manage
     public class <#= ClassName #> : NotificationObject
 	{
 	       #region Attribute
+
+		   public string EntityStatu { get; set; }
 	       <#
 		       foreach(var item in ColumnList)
 			   {
@@ -247,6 +249,7 @@ namespace CHControl.<#= ClassName #>Manage
 
 			   }
 		   #>
+		  
 		   #endregion
 
 		   #region Method
@@ -319,17 +322,20 @@ namespace CHControl.<#= ClassName #>Manage
 					     if(item.Nullable=="no")
 						 {
 						    #>
-						      sb.Append(<#= item.Name#>=="" ? "''" : "'" + <#= item.Name#> + "'" + ","); 
+						      sb.Append(<#= item.Name#>=="" ? "''" : "'" + <#= item.Name#> + "'"); 
+							  sb.Append(",");
 					        <#  
 						 }
 					     #>
-						   sb.Append(<#= item.Name#>=="" ? "NULL" : "'" + <#= item.Name#> + "'" + ","); 
+						   sb.Append(<#= item.Name#>=="" ? "NULL" : "'" + <#= item.Name#> + "'"); 
+						   sb.Append(",");
 					     <#
 					   }
 					   else
 					   {
 					       #>
-						     sb.Append(<#= item.Name#>==null ? null : "'" + <#= item.Name#> + "'" + ","); 
+						     sb.Append(<#= item.Name#>==null ? "NULL" : "'" + <#= item.Name#> + "'" ); 
+							 sb.Append(",");
 					       <#
 					   }
 					}
@@ -440,8 +446,6 @@ namespace CHControl.<#= ClassName #>Manage
 								   #>
 								     sb.Append($"<#= pk.Name#>='{<#= pk.Name#>}' ");
 								   <#
-								
-							    
 							}
 							else
 							{
@@ -462,9 +466,31 @@ namespace CHControl.<#= ClassName #>Manage
         /// <returns></returns>
         public bool DeleteEntity()
         {
-		         
-		    
-            return true;
+		    StringBuilder sb = new StringBuilder();
+			sb.Append("delete [dbo].[<#= DataName#>] where ");
+			    <#
+				      
+					  int ks = 0;
+					  foreach (var pk in pklist)
+					  {
+						   ks++;
+						   if (ks == count)
+							{
+								#>
+								    sb.Append($"<#= pk.Name#>='{<#= pk.Name#>}' ");
+								<#
+							}
+							else
+							{
+							    #>
+								   sb.Append($"<#= pk.Name#>='{<#= pk.Name#>}'" + " and ");
+								<#
+							}
+					    }
+				   #>
+		    string sql = sb.ToString();
+            int result = DB.ExecuteNonQuery(sql);
+            return (result > 0);
         }
 
         /// <summary>
@@ -488,9 +514,20 @@ namespace CHControl.<#= ClassName #>Manage
 							item.DataType=="char"
 							)
 						{
-						    #>
+						   
+						    if(item.Nullable=="no")
+							{
+							     #>
+						    entityModel.<#= item.Name#>=dt.Rows[i]["<#= item.Name#>"].ToString();
+							<#
+							}
+							else
+							{
+							   #>
 						    entityModel.<#= item.Name#>=dt.Rows[i]["<#= item.Name#>"]==DBNull.Value?"":dt.Rows[i]["<#= item.Name#>"].ToString();
 							<#
+							}
+						   
 						}
 						if(item.DataType=="date" || 
 							item.DataType=="time" || 
@@ -498,35 +535,81 @@ namespace CHControl.<#= ClassName #>Manage
 							item.DataType=="datetime"
 							)
 						{
+						    if(item.Nullable=="no")
+							{
 						    #>
+						    entityModel.<#= item.Name#>=Convert.ToDateTime(dt.Rows[i]["<#= item.Name#>"]);
+							<#
+							}
+							else
+							{
+							 #>
 						    entityModel.<#= item.Name#>=dt.Rows[i]["<#= item.Name#>"]==DBNull.Value?(DateTime?)null:Convert.ToDateTime(dt.Rows[i]["<#= item.Name#>"]);
 							<#
+							}
 						}
 						if(item.DataType=="int")
 			            {
-						     #>
+						    if(item.Nullable=="no")
+							{
+							 #>
+						    entityModel.<#= item.Name#>=Convert.ToInt32(dt.Rows[i]["<#= item.Name#>"]);
+							<#
+							}
+							else
+							{
+							 #>
 						    entityModel.<#= item.Name#>=dt.Rows[i]["<#= item.Name#>"]==DBNull.Value?(int?)null:Convert.ToInt32(dt.Rows[i]["<#= item.Name#>"]);
 							<#
+							}
+						    
 						}
 						 if(item.DataType=="bit")
 						 {
-						      #>
+						    if(item.Nullable=="no")
+							{
+							#>
+						    entityModel.<#= item.Name#>=Convert.ToBoolean(dt.Rows[i]["<#= item.Name#>"]);
+							<#
+							}
+							else
+							{
+							#>
 						    entityModel.<#= item.Name#>=dt.Rows[i]["<#= item.Name#>"]==DBNull.Value?(bool?)null:Convert.ToBoolean(dt.Rows[i]["<#= item.Name#>"]);
 							<#
+							}
 						 }
 						 if(item.DataType=="decimal" 
 							|| item.DataType=="numeric"
 							)
 						 {
-						     #>
+						   if(item.Nullable=="no")
+						   {
+						   #>
+						    entityModel.<#= item.Name#>=Convert.ToDecimal(dt.Rows[i]["<#= item.Name#>"]);
+							<#
+						   }
+						   else
+						   {
+						    #>
 						    entityModel.<#= item.Name#>=dt.Rows[i]["<#= item.Name#>"]==DBNull.Value?(decimal?)null:Convert.ToDecimal(dt.Rows[i]["<#= item.Name#>"]);
 							<#
+						   }
 						 }
 						 if(item.DataType=="uniqueidentifier")
 						{
+						     if(item.Nullable=="no")
+						   {
 						    #>
+						    entityModel.<#= item.Name#>=Guid.Parse(dt.Rows[i]["<#= item.Name#>"].ToString());
+							<#
+							}
+							else
+							{
+							  #>
 						    entityModel.<#= item.Name#>=dt.Rows[i]["<#= item.Name#>"]==DBNull.Value?(Guid?)null:Guid.Parse(dt.Rows[i]["<#= item.Name#>"].ToString());
 							<#
+							}
 						}
 				  }
 				 #>
@@ -555,9 +638,19 @@ namespace CHControl.<#= ClassName #>Manage
 							item.DataType=="char"
 							)
 						{
-						    #>
+						    if(item.Nullable=="no")
+							{
+							#>
+						    entityModel.<#= item.Name#>=dataRead["<#= item.Name#>"].ToString();
+							<#
+							}
+							else
+							{
+							 #>
 						    entityModel.<#= item.Name#>=dataRead["<#= item.Name#>"]==DBNull.Value?"":dataRead["<#= item.Name#>"].ToString();
 							<#
+							}
+						    
 						}
 						if(item.DataType=="date" || 
 							item.DataType=="time" || 
@@ -565,35 +658,81 @@ namespace CHControl.<#= ClassName #>Manage
 							item.DataType=="datetime"
 							)
 						{
+						   if(item.Nullable=="no")
+							{
 						    #>
 						    entityModel.<#= item.Name#>=dataRead["<#= item.Name#>"]==DBNull.Value?(DateTime?)null:Convert.ToDateTime(dataRead["<#= item.Name#>"]);
 							<#
+							}
+							else
+							{
+							 #>
+						    entityModel.<#= item.Name#>=Convert.ToDateTime(dataRead["<#= item.Name#>"]);
+							<#
+							}
 						}
 						if(item.DataType=="int")
 			            {
+						   if(item.Nullable=="no")
+							{
 						     #>
+						    entityModel.<#= item.Name#>=Convert.ToInt32(dataRead["<#= item.Name#>"]);
+							<#
+							}
+							else
+							{
+							 #>
 						    entityModel.<#= item.Name#>=dataRead["<#= item.Name#>"]==DBNull.Value?(int?)null:Convert.ToInt32(dataRead["<#= item.Name#>"]);
 							<#
+							}
 						}
 						 if(item.DataType=="bit")
 						 {
+						     if(item.Nullable=="no")
+							{
 						      #>
+						    entityModel.<#= item.Name#>=Convert.ToBoolean(dataRead["<#= item.Name#>"]);
+							<#
+							}
+							else
+							{
+							   #>
 						    entityModel.<#= item.Name#>=dataRead["<#= item.Name#>"]==DBNull.Value?(bool?)null:Convert.ToBoolean(dataRead["<#= item.Name#>"]);
 							<#
+							}
 						 }
 						 if(item.DataType=="decimal" 
 							|| item.DataType=="numeric"
 							)
 						 {
+
+						  if(item.Nullable=="no")
+							{
 						     #>
+						    entityModel.<#= item.Name#>=Convert.ToDecimal(dataRead["<#= item.Name#>"]);
+							<#
+							}
+							else
+							{
+							 #>
 						    entityModel.<#= item.Name#>=dataRead["<#= item.Name#>"]==DBNull.Value?(decimal?)null:Convert.ToDecimal(dataRead["<#= item.Name#>"]);
 							<#
+							}
 						 }
 						 if(item.DataType=="uniqueidentifier")
 						{
+						   if(item.Nullable=="no")
+							{
 						    #>
 						    entityModel.<#= item.Name#>=dataRead["<#= item.Name#>"]==DBNull.Value?(Guid?)null:Guid.Parse(dataRead["<#= item.Name#>"].ToString());
 							<#
+							}
+							else
+							{
+							 #>
+						    entityModel.<#= item.Name#>=Guid.Parse(dataRead["<#= item.Name#>"].ToString());
+							<#
+							}
 						}
 				  }
 				 #>
